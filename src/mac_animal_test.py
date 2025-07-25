@@ -3,7 +3,7 @@ import cv2
 import torch
 import sys
 import os
-from animal_detector_2 import AnimalDetector
+from enhanced_animal_detector import AnimalDetector
 from PIL import Image
 import numpy as np
 

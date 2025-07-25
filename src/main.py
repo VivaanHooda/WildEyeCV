@@ -1,6 +1,6 @@
 # main.py
 
-from animal_detector_2 import AnimalDetector, get_data_loaders
+from enhanced_animal_detector import AnimalDetector, get_data_loaders
 import torch
 from PIL import Image
 import gc

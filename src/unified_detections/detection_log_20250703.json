@@ -1,0 +1,4362 @@
+[
+  {
+    "timestamp": "2025-07-03 11:45:20",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.8443647027015686,
+      "camera": "default"
+    },
+    "id": 0
+  },
+  {
+    "timestamp": "2025-07-03 11:45:20",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6549479365348816,
+      "camera": "default"
+    },
+    "id": 1
+  },
+  {
+    "timestamp": "2025-07-03 11:45:20",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6512802839279175,
+      "camera": "default"
+    },
+    "id": 2
+  },
+  {
+    "timestamp": "2025-07-03 11:45:20",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6479061841964722,
+      "camera": "default"
+    },
+    "id": 3
+  },
+  {
+    "timestamp": "2025-07-03 11:45:20",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6486619710922241,
+      "camera": "default"
+    },
+    "id": 4
+  },
+  {
+    "timestamp": "2025-07-03 11:45:20",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6525437235832214,
+      "camera": "default"
+    },
+    "id": 5
+  },
+  {
+    "timestamp": "2025-07-03 11:45:20",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6524473428726196,
+      "camera": "default"
+    },
+    "id": 6
+  },
+  {
+    "timestamp": "2025-07-03 11:45:20",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.650322675704956,
+      "camera": "default"
+    },
+    "id": 7
+  },
+  {
+    "timestamp": "2025-07-03 11:45:21",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6518007516860962,
+      "camera": "default"
+    },
+    "id": 8
+  },
+  {
+    "timestamp": "2025-07-03 11:45:21",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6529597640037537,
+      "camera": "default"
+    },
+    "id": 9
+  },
+  {
+    "timestamp": "2025-07-03 11:45:21",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6509459018707275,
+      "camera": "default"
+    },
+    "id": 10
+  },
+  {
+    "timestamp": "2025-07-03 11:45:21",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6499561071395874,
+      "camera": "default"
+    },
+    "id": 11
+  },
+  {
+    "timestamp": "2025-07-03 11:45:21",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6548033356666565,
+      "camera": "default"
+    },
+    "id": 12
+  },
+  {
+    "timestamp": "2025-07-03 11:45:21",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6590427160263062,
+      "camera": "default"
+    },
+    "id": 13
+  },
+  {
+    "timestamp": "2025-07-03 11:45:21",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6566758155822754,
+      "camera": "default"
+    },
+    "id": 14
+  },
+  {
+    "timestamp": "2025-07-03 11:45:21",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6584908366203308,
+      "camera": "default"
+    },
+    "id": 15
+  },
+  {
+    "timestamp": "2025-07-03 11:45:21",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6528852581977844,
+      "camera": "default"
+    },
+    "id": 16
+  },
+  {
+    "timestamp": "2025-07-03 11:45:21",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6601301431655884,
+      "camera": "default"
+    },
+    "id": 17
+  },
+  {
+    "timestamp": "2025-07-03 11:45:21",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6549476385116577,
+      "camera": "default"
+    },
+    "id": 18
+  },
+  {
+    "timestamp": "2025-07-03 11:45:21",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6556917428970337,
+      "camera": "default"
+    },
+    "id": 19
+  },
+  {
+    "timestamp": "2025-07-03 11:45:21",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.657219648361206,
+      "camera": "default"
+    },
+    "id": 20
+  },
+  {
+    "timestamp": "2025-07-03 11:45:21",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6569278240203857,
+      "camera": "default"
+    },
+    "id": 21
+  },
+  {
+    "timestamp": "2025-07-03 11:45:21",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6628236174583435,
+      "camera": "default"
+    },
+    "id": 22
+  },
+  {
+    "timestamp": "2025-07-03 11:45:22",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6580764651298523,
+      "camera": "default"
+    },
+    "id": 23
+  },
+  {
+    "timestamp": "2025-07-03 11:45:22",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6619478464126587,
+      "camera": "default"
+    },
+    "id": 24
+  },
+  {
+    "timestamp": "2025-07-03 11:45:22",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6724077463150024,
+      "camera": "default"
+    },
+    "id": 25
+  },
+  {
+    "timestamp": "2025-07-03 11:45:22",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6618019938468933,
+      "camera": "default"
+    },
+    "id": 26
+  },
+  {
+    "timestamp": "2025-07-03 11:45:22",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6642811894416809,
+      "camera": "default"
+    },
+    "id": 27
+  },
+  {
+    "timestamp": "2025-07-03 11:45:22",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6563100814819336,
+      "camera": "default"
+    },
+    "id": 28
+  },
+  {
+    "timestamp": "2025-07-03 11:45:22",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.654538631439209,
+      "camera": "default"
+    },
+    "id": 29
+  },
+  {
+    "timestamp": "2025-07-03 11:45:22",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6379567980766296,
+      "camera": "default"
+    },
+    "id": 30
+  },
+  {
+    "timestamp": "2025-07-03 11:45:22",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.636618435382843,
+      "camera": "default"
+    },
+    "id": 31
+  },
+  {
+    "timestamp": "2025-07-03 11:45:22",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6360332369804382,
+      "camera": "default"
+    },
+    "id": 32
+  },
+  {
+    "timestamp": "2025-07-03 11:45:22",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6336155533790588,
+      "camera": "default"
+    },
+    "id": 33
+  },
+  {
+    "timestamp": "2025-07-03 11:45:22",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6330276131629944,
+      "camera": "default"
+    },
+    "id": 34
+  },
+  {
+    "timestamp": "2025-07-03 11:45:22",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6355756521224976,
+      "camera": "default"
+    },
+    "id": 35
+  },
+  {
+    "timestamp": "2025-07-03 11:45:22",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6392779350280762,
+      "camera": "default"
+    },
+    "id": 36
+  },
+  {
+    "timestamp": "2025-07-03 11:45:22",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6390151977539062,
+      "camera": "default"
+    },
+    "id": 37
+  },
+  {
+    "timestamp": "2025-07-03 11:45:23",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6419369578361511,
+      "camera": "default"
+    },
+    "id": 38
+  },
+  {
+    "timestamp": "2025-07-03 11:45:23",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6435480117797852,
+      "camera": "default"
+    },
+    "id": 39
+  },
+  {
+    "timestamp": "2025-07-03 11:45:23",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6444613337516785,
+      "camera": "default"
+    },
+    "id": 40
+  },
+  {
+    "timestamp": "2025-07-03 11:45:23",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6453242897987366,
+      "camera": "default"
+    },
+    "id": 41
+  },
+  {
+    "timestamp": "2025-07-03 11:45:23",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6452673077583313,
+      "camera": "default"
+    },
+    "id": 42
+  },
+  {
+    "timestamp": "2025-07-03 11:45:23",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6455914974212646,
+      "camera": "default"
+    },
+    "id": 43
+  },
+  {
+    "timestamp": "2025-07-03 11:45:23",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6383076310157776,
+      "camera": "default"
+    },
+    "id": 44
+  },
+  {
+    "timestamp": "2025-07-03 11:45:23",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6505265831947327,
+      "camera": "default"
+    },
+    "id": 45
+  },
+  {
+    "timestamp": "2025-07-03 11:45:23",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6452577710151672,
+      "camera": "default"
+    },
+    "id": 46
+  },
+  {
+    "timestamp": "2025-07-03 11:45:23",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6459011435508728,
+      "camera": "default"
+    },
+    "id": 47
+  },
+  {
+    "timestamp": "2025-07-03 11:45:23",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6465986967086792,
+      "camera": "default"
+    },
+    "id": 48
+  },
+  {
+    "timestamp": "2025-07-03 11:45:23",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.644432008266449,
+      "camera": "default"
+    },
+    "id": 49
+  },
+  {
+    "timestamp": "2025-07-03 11:45:23",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6457359194755554,
+      "camera": "default"
+    },
+    "id": 50
+  },
+  {
+    "timestamp": "2025-07-03 11:45:23",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6462897062301636,
+      "camera": "default"
+    },
+    "id": 51
+  },
+  {
+    "timestamp": "2025-07-03 11:45:23",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6451155543327332,
+      "camera": "default"
+    },
+    "id": 52
+  },
+  {
+    "timestamp": "2025-07-03 11:45:24",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6478759050369263,
+      "camera": "default"
+    },
+    "id": 53
+  },
+  {
+    "timestamp": "2025-07-03 11:45:24",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6449071168899536,
+      "camera": "default"
+    },
+    "id": 54
+  },
+  {
+    "timestamp": "2025-07-03 11:45:24",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6610970497131348,
+      "camera": "default"
+    },
+    "id": 55
+  },
+  {
+    "timestamp": "2025-07-03 11:45:24",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6578475832939148,
+      "camera": "default"
+    },
+    "id": 56
+  },
+  {
+    "timestamp": "2025-07-03 11:45:24",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6604880690574646,
+      "camera": "default"
+    },
+    "id": 57
+  },
+  {
+    "timestamp": "2025-07-03 11:45:24",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6643084287643433,
+      "camera": "default"
+    },
+    "id": 58
+  },
+  {
+    "timestamp": "2025-07-03 11:45:24",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6643221974372864,
+      "camera": "default"
+    },
+    "id": 59
+  },
+  {
+    "timestamp": "2025-07-03 11:45:24",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6620503067970276,
+      "camera": "default"
+    },
+    "id": 60
+  },
+  {
+    "timestamp": "2025-07-03 11:45:24",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6601760983467102,
+      "camera": "default"
+    },
+    "id": 61
+  },
+  {
+    "timestamp": "2025-07-03 11:45:24",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6617217063903809,
+      "camera": "default"
+    },
+    "id": 62
+  },
+  {
+    "timestamp": "2025-07-03 11:45:24",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6658264994621277,
+      "camera": "default"
+    },
+    "id": 63
+  },
+  {
+    "timestamp": "2025-07-03 11:45:24",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6699979305267334,
+      "camera": "default"
+    },
+    "id": 64
+  },
+  {
+    "timestamp": "2025-07-03 11:45:24",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6693571209907532,
+      "camera": "default"
+    },
+    "id": 65
+  },
+  {
+    "timestamp": "2025-07-03 11:45:24",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6723663806915283,
+      "camera": "default"
+    },
+    "id": 66
+  },
+  {
+    "timestamp": "2025-07-03 11:45:24",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6710236072540283,
+      "camera": "default"
+    },
+    "id": 67
+  },
+  {
+    "timestamp": "2025-07-03 11:45:25",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6639920473098755,
+      "camera": "default"
+    },
+    "id": 68
+  },
+  {
+    "timestamp": "2025-07-03 11:45:25",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6723952293395996,
+      "camera": "default"
+    },
+    "id": 69
+  },
+  {
+    "timestamp": "2025-07-03 11:45:25",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6573256254196167,
+      "camera": "default"
+    },
+    "id": 70
+  },
+  {
+    "timestamp": "2025-07-03 11:45:25",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6600981950759888,
+      "camera": "default"
+    },
+    "id": 71
+  },
+  {
+    "timestamp": "2025-07-03 11:45:25",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6598925590515137,
+      "camera": "default"
+    },
+    "id": 72
+  },
+  {
+    "timestamp": "2025-07-03 11:45:25",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6663461923599243,
+      "camera": "default"
+    },
+    "id": 73
+  },
+  {
+    "timestamp": "2025-07-03 11:45:25",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.672731876373291,
+      "camera": "default"
+    },
+    "id": 74
+  },
+  {
+    "timestamp": "2025-07-03 11:45:25",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6699487566947937,
+      "camera": "default"
+    },
+    "id": 75
+  },
+  {
+    "timestamp": "2025-07-03 11:45:25",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6627231240272522,
+      "camera": "default"
+    },
+    "id": 76
+  },
+  {
+    "timestamp": "2025-07-03 11:45:25",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6698094606399536,
+      "camera": "default"
+    },
+    "id": 77
+  },
+  {
+    "timestamp": "2025-07-03 11:45:25",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6691117882728577,
+      "camera": "default"
+    },
+    "id": 78
+  },
+  {
+    "timestamp": "2025-07-03 11:45:25",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6633458137512207,
+      "camera": "default"
+    },
+    "id": 79
+  },
+  {
+    "timestamp": "2025-07-03 11:45:25",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.663162112236023,
+      "camera": "default"
+    },
+    "id": 80
+  },
+  {
+    "timestamp": "2025-07-03 11:45:25",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6632859706878662,
+      "camera": "default"
+    },
+    "id": 81
+  },
+  {
+    "timestamp": "2025-07-03 11:45:25",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.663990318775177,
+      "camera": "default"
+    },
+    "id": 82
+  },
+  {
+    "timestamp": "2025-07-03 11:45:26",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6609460711479187,
+      "camera": "default"
+    },
+    "id": 83
+  },
+  {
+    "timestamp": "2025-07-03 11:45:26",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6629603505134583,
+      "camera": "default"
+    },
+    "id": 84
+  },
+  {
+    "timestamp": "2025-07-03 11:45:26",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6590147018432617,
+      "camera": "default"
+    },
+    "id": 85
+  },
+  {
+    "timestamp": "2025-07-03 11:45:26",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6557595133781433,
+      "camera": "default"
+    },
+    "id": 86
+  },
+  {
+    "timestamp": "2025-07-03 11:45:26",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6572850346565247,
+      "camera": "default"
+    },
+    "id": 87
+  },
+  {
+    "timestamp": "2025-07-03 11:45:26",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6542023420333862,
+      "camera": "default"
+    },
+    "id": 88
+  },
+  {
+    "timestamp": "2025-07-03 11:45:26",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6544405221939087,
+      "camera": "default"
+    },
+    "id": 89
+  },
+  {
+    "timestamp": "2025-07-03 11:45:26",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6509618163108826,
+      "camera": "default"
+    },
+    "id": 90
+  },
+  {
+    "timestamp": "2025-07-03 11:45:26",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.650534987449646,
+      "camera": "default"
+    },
+    "id": 91
+  },
+  {
+    "timestamp": "2025-07-03 11:45:26",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6507201790809631,
+      "camera": "default"
+    },
+    "id": 92
+  },
+  {
+    "timestamp": "2025-07-03 11:45:26",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6510744094848633,
+      "camera": "default"
+    },
+    "id": 93
+  },
+  {
+    "timestamp": "2025-07-03 11:45:26",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6503477692604065,
+      "camera": "default"
+    },
+    "id": 94
+  },
+  {
+    "timestamp": "2025-07-03 11:45:26",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6509659886360168,
+      "camera": "default"
+    },
+    "id": 95
+  },
+  {
+    "timestamp": "2025-07-03 11:45:26",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6546744704246521,
+      "camera": "default"
+    },
+    "id": 96
+  },
+  {
+    "timestamp": "2025-07-03 11:45:26",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6623807549476624,
+      "camera": "default"
+    },
+    "id": 97
+  },
+  {
+    "timestamp": "2025-07-03 11:45:27",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6635007858276367,
+      "camera": "default"
+    },
+    "id": 98
+  },
+  {
+    "timestamp": "2025-07-03 11:45:27",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.67139732837677,
+      "camera": "default"
+    },
+    "id": 99
+  },
+  {
+    "timestamp": "2025-07-03 11:45:27",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6546234488487244,
+      "camera": "default"
+    },
+    "id": 100
+  },
+  {
+    "timestamp": "2025-07-03 11:45:27",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6534649729728699,
+      "camera": "default"
+    },
+    "id": 101
+  },
+  {
+    "timestamp": "2025-07-03 11:45:27",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6549834609031677,
+      "camera": "default"
+    },
+    "id": 102
+  },
+  {
+    "timestamp": "2025-07-03 11:45:27",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.658629298210144,
+      "camera": "default"
+    },
+    "id": 103
+  },
+  {
+    "timestamp": "2025-07-03 11:45:27",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6532624363899231,
+      "camera": "default"
+    },
+    "id": 104
+  },
+  {
+    "timestamp": "2025-07-03 11:45:27",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.646921694278717,
+      "camera": "default"
+    },
+    "id": 105
+  },
+  {
+    "timestamp": "2025-07-03 11:45:27",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6494542360305786,
+      "camera": "default"
+    },
+    "id": 106
+  },
+  {
+    "timestamp": "2025-07-03 11:45:27",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.655186653137207,
+      "camera": "default"
+    },
+    "id": 107
+  },
+  {
+    "timestamp": "2025-07-03 11:45:27",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6535645127296448,
+      "camera": "default"
+    },
+    "id": 108
+  },
+  {
+    "timestamp": "2025-07-03 11:45:27",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6623856425285339,
+      "camera": "default"
+    },
+    "id": 109
+  },
+  {
+    "timestamp": "2025-07-03 11:45:27",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6668655276298523,
+      "camera": "default"
+    },
+    "id": 110
+  },
+  {
+    "timestamp": "2025-07-03 11:45:27",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6626307964324951,
+      "camera": "default"
+    },
+    "id": 111
+  },
+  {
+    "timestamp": "2025-07-03 11:45:27",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6696358919143677,
+      "camera": "default"
+    },
+    "id": 112
+  },
+  {
+    "timestamp": "2025-07-03 11:45:28",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6690752506256104,
+      "camera": "default"
+    },
+    "id": 113
+  },
+  {
+    "timestamp": "2025-07-03 11:45:28",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.670649528503418,
+      "camera": "default"
+    },
+    "id": 114
+  },
+  {
+    "timestamp": "2025-07-03 11:45:28",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6716563105583191,
+      "camera": "default"
+    },
+    "id": 115
+  },
+  {
+    "timestamp": "2025-07-03 11:45:28",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6681191921234131,
+      "camera": "default"
+    },
+    "id": 116
+  },
+  {
+    "timestamp": "2025-07-03 11:45:28",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.66864013671875,
+      "camera": "default"
+    },
+    "id": 117
+  },
+  {
+    "timestamp": "2025-07-03 11:45:28",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6685559153556824,
+      "camera": "default"
+    },
+    "id": 118
+  },
+  {
+    "timestamp": "2025-07-03 11:45:28",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6656112670898438,
+      "camera": "default"
+    },
+    "id": 119
+  },
+  {
+    "timestamp": "2025-07-03 11:45:28",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6637172102928162,
+      "camera": "default"
+    },
+    "id": 120
+  },
+  {
+    "timestamp": "2025-07-03 11:45:28",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6655689477920532,
+      "camera": "default"
+    },
+    "id": 121
+  },
+  {
+    "timestamp": "2025-07-03 11:45:28",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6661327481269836,
+      "camera": "default"
+    },
+    "id": 122
+  },
+  {
+    "timestamp": "2025-07-03 11:45:28",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6662254929542542,
+      "camera": "default"
+    },
+    "id": 123
+  },
+  {
+    "timestamp": "2025-07-03 11:45:28",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6642880439758301,
+      "camera": "default"
+    },
+    "id": 124
+  },
+  {
+    "timestamp": "2025-07-03 11:45:28",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6644532680511475,
+      "camera": "default"
+    },
+    "id": 125
+  },
+  {
+    "timestamp": "2025-07-03 11:45:28",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6606287956237793,
+      "camera": "default"
+    },
+    "id": 126
+  },
+  {
+    "timestamp": "2025-07-03 11:45:28",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6623138785362244,
+      "camera": "default"
+    },
+    "id": 127
+  },
+  {
+    "timestamp": "2025-07-03 11:45:29",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6639635562896729,
+      "camera": "default"
+    },
+    "id": 128
+  },
+  {
+    "timestamp": "2025-07-03 11:45:29",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6623770594596863,
+      "camera": "default"
+    },
+    "id": 129
+  },
+  {
+    "timestamp": "2025-07-03 11:45:29",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6620727181434631,
+      "camera": "default"
+    },
+    "id": 130
+  },
+  {
+    "timestamp": "2025-07-03 11:45:29",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6595197916030884,
+      "camera": "default"
+    },
+    "id": 131
+  },
+  {
+    "timestamp": "2025-07-03 11:45:29",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6683775782585144,
+      "camera": "default"
+    },
+    "id": 132
+  },
+  {
+    "timestamp": "2025-07-03 11:45:29",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6615549325942993,
+      "camera": "default"
+    },
+    "id": 133
+  },
+  {
+    "timestamp": "2025-07-03 11:45:29",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.665958821773529,
+      "camera": "default"
+    },
+    "id": 134
+  },
+  {
+    "timestamp": "2025-07-03 11:45:29",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6640621423721313,
+      "camera": "default"
+    },
+    "id": 135
+  },
+  {
+    "timestamp": "2025-07-03 11:45:29",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6599231362342834,
+      "camera": "default"
+    },
+    "id": 136
+  },
+  {
+    "timestamp": "2025-07-03 11:45:29",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6660703420639038,
+      "camera": "default"
+    },
+    "id": 137
+  },
+  {
+    "timestamp": "2025-07-03 11:45:29",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6708359718322754,
+      "camera": "default"
+    },
+    "id": 138
+  },
+  {
+    "timestamp": "2025-07-03 11:45:29",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6660090684890747,
+      "camera": "default"
+    },
+    "id": 139
+  },
+  {
+    "timestamp": "2025-07-03 11:45:29",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6697629690170288,
+      "camera": "default"
+    },
+    "id": 140
+  },
+  {
+    "timestamp": "2025-07-03 11:45:29",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6666988730430603,
+      "camera": "default"
+    },
+    "id": 141
+  },
+  {
+    "timestamp": "2025-07-03 11:45:29",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6663069725036621,
+      "camera": "default"
+    },
+    "id": 142
+  },
+  {
+    "timestamp": "2025-07-03 11:45:29",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.661551833152771,
+      "camera": "default"
+    },
+    "id": 143
+  },
+  {
+    "timestamp": "2025-07-03 11:45:30",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.662311315536499,
+      "camera": "default"
+    },
+    "id": 144
+  },
+  {
+    "timestamp": "2025-07-03 11:45:30",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6601762175559998,
+      "camera": "default"
+    },
+    "id": 145
+  },
+  {
+    "timestamp": "2025-07-03 11:45:30",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6668717861175537,
+      "camera": "default"
+    },
+    "id": 146
+  },
+  {
+    "timestamp": "2025-07-03 11:45:30",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6660395860671997,
+      "camera": "default"
+    },
+    "id": 147
+  },
+  {
+    "timestamp": "2025-07-03 11:45:30",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.669741153717041,
+      "camera": "default"
+    },
+    "id": 148
+  },
+  {
+    "timestamp": "2025-07-03 11:45:30",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.667478084564209,
+      "camera": "default"
+    },
+    "id": 149
+  },
+  {
+    "timestamp": "2025-07-03 11:45:30",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6663823127746582,
+      "camera": "default"
+    },
+    "id": 150
+  },
+  {
+    "timestamp": "2025-07-03 11:45:30",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6642246246337891,
+      "camera": "default"
+    },
+    "id": 151
+  },
+  {
+    "timestamp": "2025-07-03 11:45:30",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6682512760162354,
+      "camera": "default"
+    },
+    "id": 152
+  },
+  {
+    "timestamp": "2025-07-03 11:45:30",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6677871942520142,
+      "camera": "default"
+    },
+    "id": 153
+  },
+  {
+    "timestamp": "2025-07-03 11:45:30",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6640161871910095,
+      "camera": "default"
+    },
+    "id": 154
+  },
+  {
+    "timestamp": "2025-07-03 11:45:30",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.66362464427948,
+      "camera": "default"
+    },
+    "id": 155
+  },
+  {
+    "timestamp": "2025-07-03 11:45:30",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6634777784347534,
+      "camera": "default"
+    },
+    "id": 156
+  },
+  {
+    "timestamp": "2025-07-03 11:45:30",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6615262031555176,
+      "camera": "default"
+    },
+    "id": 157
+  },
+  {
+    "timestamp": "2025-07-03 11:45:30",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6649321913719177,
+      "camera": "default"
+    },
+    "id": 158
+  },
+  {
+    "timestamp": "2025-07-03 11:45:31",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6521138548851013,
+      "camera": "default"
+    },
+    "id": 159
+  },
+  {
+    "timestamp": "2025-07-03 11:45:31",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6400299072265625,
+      "camera": "default"
+    },
+    "id": 160
+  },
+  {
+    "timestamp": "2025-07-03 11:45:31",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6527483463287354,
+      "camera": "default"
+    },
+    "id": 161
+  },
+  {
+    "timestamp": "2025-07-03 11:45:31",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6674349308013916,
+      "camera": "default"
+    },
+    "id": 162
+  },
+  {
+    "timestamp": "2025-07-03 11:45:31",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6601793169975281,
+      "camera": "default"
+    },
+    "id": 163
+  },
+  {
+    "timestamp": "2025-07-03 11:45:31",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6601976752281189,
+      "camera": "default"
+    },
+    "id": 164
+  },
+  {
+    "timestamp": "2025-07-03 11:45:31",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6562110185623169,
+      "camera": "default"
+    },
+    "id": 165
+  },
+  {
+    "timestamp": "2025-07-03 11:45:31",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6576445698738098,
+      "camera": "default"
+    },
+    "id": 166
+  },
+  {
+    "timestamp": "2025-07-03 11:45:31",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6610886454582214,
+      "camera": "default"
+    },
+    "id": 167
+  },
+  {
+    "timestamp": "2025-07-03 11:45:31",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6620858311653137,
+      "camera": "default"
+    },
+    "id": 168
+  },
+  {
+    "timestamp": "2025-07-03 11:45:31",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6621871590614319,
+      "camera": "default"
+    },
+    "id": 169
+  },
+  {
+    "timestamp": "2025-07-03 11:45:31",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6646187901496887,
+      "camera": "default"
+    },
+    "id": 170
+  },
+  {
+    "timestamp": "2025-07-03 11:45:31",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6604958176612854,
+      "camera": "default"
+    },
+    "id": 171
+  },
+  {
+    "timestamp": "2025-07-03 11:45:31",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6616934537887573,
+      "camera": "default"
+    },
+    "id": 172
+  },
+  {
+    "timestamp": "2025-07-03 11:45:31",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6592391133308411,
+      "camera": "default"
+    },
+    "id": 173
+  },
+  {
+    "timestamp": "2025-07-03 11:45:32",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6564608812332153,
+      "camera": "default"
+    },
+    "id": 174
+  },
+  {
+    "timestamp": "2025-07-03 11:45:32",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6564258337020874,
+      "camera": "default"
+    },
+    "id": 175
+  },
+  {
+    "timestamp": "2025-07-03 11:45:32",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6559688448905945,
+      "camera": "default"
+    },
+    "id": 176
+  },
+  {
+    "timestamp": "2025-07-03 11:45:32",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6582587957382202,
+      "camera": "default"
+    },
+    "id": 177
+  },
+  {
+    "timestamp": "2025-07-03 11:45:32",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6581165790557861,
+      "camera": "default"
+    },
+    "id": 178
+  },
+  {
+    "timestamp": "2025-07-03 11:45:32",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6605274081230164,
+      "camera": "default"
+    },
+    "id": 179
+  },
+  {
+    "timestamp": "2025-07-03 11:45:32",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6610543727874756,
+      "camera": "default"
+    },
+    "id": 180
+  },
+  {
+    "timestamp": "2025-07-03 11:45:32",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6608717441558838,
+      "camera": "default"
+    },
+    "id": 181
+  },
+  {
+    "timestamp": "2025-07-03 11:45:32",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6625180840492249,
+      "camera": "default"
+    },
+    "id": 182
+  },
+  {
+    "timestamp": "2025-07-03 11:45:32",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6630239486694336,
+      "camera": "default"
+    },
+    "id": 183
+  },
+  {
+    "timestamp": "2025-07-03 11:45:32",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6620442867279053,
+      "camera": "default"
+    },
+    "id": 184
+  },
+  {
+    "timestamp": "2025-07-03 11:45:32",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6631762385368347,
+      "camera": "default"
+    },
+    "id": 185
+  },
+  {
+    "timestamp": "2025-07-03 11:45:32",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.663536548614502,
+      "camera": "default"
+    },
+    "id": 186
+  },
+  {
+    "timestamp": "2025-07-03 11:45:32",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6629490256309509,
+      "camera": "default"
+    },
+    "id": 187
+  },
+  {
+    "timestamp": "2025-07-03 11:45:32",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6606217622756958,
+      "camera": "default"
+    },
+    "id": 188
+  },
+  {
+    "timestamp": "2025-07-03 11:45:33",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.659254252910614,
+      "camera": "default"
+    },
+    "id": 189
+  },
+  {
+    "timestamp": "2025-07-03 11:45:33",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6565490365028381,
+      "camera": "default"
+    },
+    "id": 190
+  },
+  {
+    "timestamp": "2025-07-03 11:45:33",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6534402370452881,
+      "camera": "default"
+    },
+    "id": 191
+  },
+  {
+    "timestamp": "2025-07-03 11:45:33",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.657135009765625,
+      "camera": "default"
+    },
+    "id": 192
+  },
+  {
+    "timestamp": "2025-07-03 11:45:33",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6578732132911682,
+      "camera": "default"
+    },
+    "id": 193
+  },
+  {
+    "timestamp": "2025-07-03 11:45:33",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6559664607048035,
+      "camera": "default"
+    },
+    "id": 194
+  },
+  {
+    "timestamp": "2025-07-03 11:45:33",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6539970636367798,
+      "camera": "default"
+    },
+    "id": 195
+  },
+  {
+    "timestamp": "2025-07-03 11:45:33",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6548207402229309,
+      "camera": "default"
+    },
+    "id": 196
+  },
+  {
+    "timestamp": "2025-07-03 11:45:33",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.652910053730011,
+      "camera": "default"
+    },
+    "id": 197
+  },
+  {
+    "timestamp": "2025-07-03 11:45:33",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.654289186000824,
+      "camera": "default"
+    },
+    "id": 198
+  },
+  {
+    "timestamp": "2025-07-03 11:45:33",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6514235138893127,
+      "camera": "default"
+    },
+    "id": 199
+  },
+  {
+    "timestamp": "2025-07-03 11:45:33",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6530233025550842,
+      "camera": "default"
+    },
+    "id": 200
+  },
+  {
+    "timestamp": "2025-07-03 11:45:33",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6526179313659668,
+      "camera": "default"
+    },
+    "id": 201
+  },
+  {
+    "timestamp": "2025-07-03 11:45:33",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6518063545227051,
+      "camera": "default"
+    },
+    "id": 202
+  },
+  {
+    "timestamp": "2025-07-03 11:45:33",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6517993211746216,
+      "camera": "default"
+    },
+    "id": 203
+  },
+  {
+    "timestamp": "2025-07-03 11:45:34",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6500574350357056,
+      "camera": "default"
+    },
+    "id": 204
+  },
+  {
+    "timestamp": "2025-07-03 11:45:34",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6497573256492615,
+      "camera": "default"
+    },
+    "id": 205
+  },
+  {
+    "timestamp": "2025-07-03 11:45:34",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6470177173614502,
+      "camera": "default"
+    },
+    "id": 206
+  },
+  {
+    "timestamp": "2025-07-03 11:45:34",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6465489268302917,
+      "camera": "default"
+    },
+    "id": 207
+  },
+  {
+    "timestamp": "2025-07-03 11:45:34",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6448603272438049,
+      "camera": "default"
+    },
+    "id": 208
+  },
+  {
+    "timestamp": "2025-07-03 11:45:34",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6447049379348755,
+      "camera": "default"
+    },
+    "id": 209
+  },
+  {
+    "timestamp": "2025-07-03 11:45:34",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6443838477134705,
+      "camera": "default"
+    },
+    "id": 210
+  },
+  {
+    "timestamp": "2025-07-03 11:45:34",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.645354688167572,
+      "camera": "default"
+    },
+    "id": 211
+  },
+  {
+    "timestamp": "2025-07-03 11:45:34",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6440026760101318,
+      "camera": "default"
+    },
+    "id": 212
+  },
+  {
+    "timestamp": "2025-07-03 11:45:34",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6461411118507385,
+      "camera": "default"
+    },
+    "id": 213
+  },
+  {
+    "timestamp": "2025-07-03 11:45:34",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6488471031188965,
+      "camera": "default"
+    },
+    "id": 214
+  },
+  {
+    "timestamp": "2025-07-03 11:45:34",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6486712694168091,
+      "camera": "default"
+    },
+    "id": 215
+  },
+  {
+    "timestamp": "2025-07-03 11:45:34",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6499944925308228,
+      "camera": "default"
+    },
+    "id": 216
+  },
+  {
+    "timestamp": "2025-07-03 11:45:34",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6528521180152893,
+      "camera": "default"
+    },
+    "id": 217
+  },
+  {
+    "timestamp": "2025-07-03 11:45:34",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6542424559593201,
+      "camera": "default"
+    },
+    "id": 218
+  },
+  {
+    "timestamp": "2025-07-03 11:45:35",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6548988223075867,
+      "camera": "default"
+    },
+    "id": 219
+  },
+  {
+    "timestamp": "2025-07-03 11:45:35",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6550830006599426,
+      "camera": "default"
+    },
+    "id": 220
+  },
+  {
+    "timestamp": "2025-07-03 11:45:35",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6570718884468079,
+      "camera": "default"
+    },
+    "id": 221
+  },
+  {
+    "timestamp": "2025-07-03 11:45:35",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6557325720787048,
+      "camera": "default"
+    },
+    "id": 222
+  },
+  {
+    "timestamp": "2025-07-03 11:45:35",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.654849648475647,
+      "camera": "default"
+    },
+    "id": 223
+  },
+  {
+    "timestamp": "2025-07-03 11:45:35",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6554058194160461,
+      "camera": "default"
+    },
+    "id": 224
+  },
+  {
+    "timestamp": "2025-07-03 11:45:35",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6566474437713623,
+      "camera": "default"
+    },
+    "id": 225
+  },
+  {
+    "timestamp": "2025-07-03 11:45:35",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6564779877662659,
+      "camera": "default"
+    },
+    "id": 226
+  },
+  {
+    "timestamp": "2025-07-03 11:45:35",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6561536192893982,
+      "camera": "default"
+    },
+    "id": 227
+  },
+  {
+    "timestamp": "2025-07-03 11:45:35",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6550715565681458,
+      "camera": "default"
+    },
+    "id": 228
+  },
+  {
+    "timestamp": "2025-07-03 11:45:35",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6553762555122375,
+      "camera": "default"
+    },
+    "id": 229
+  },
+  {
+    "timestamp": "2025-07-03 11:45:35",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6537286639213562,
+      "camera": "default"
+    },
+    "id": 230
+  },
+  {
+    "timestamp": "2025-07-03 11:45:35",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6548767685890198,
+      "camera": "default"
+    },
+    "id": 231
+  },
+  {
+    "timestamp": "2025-07-03 11:45:35",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6555382013320923,
+      "camera": "default"
+    },
+    "id": 232
+  },
+  {
+    "timestamp": "2025-07-03 11:45:35",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6569708585739136,
+      "camera": "default"
+    },
+    "id": 233
+  },
+  {
+    "timestamp": "2025-07-03 11:45:36",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6580823063850403,
+      "camera": "default"
+    },
+    "id": 234
+  },
+  {
+    "timestamp": "2025-07-03 11:45:36",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.656264066696167,
+      "camera": "default"
+    },
+    "id": 235
+  },
+  {
+    "timestamp": "2025-07-03 11:45:36",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6571728587150574,
+      "camera": "default"
+    },
+    "id": 236
+  },
+  {
+    "timestamp": "2025-07-03 11:45:36",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6562844514846802,
+      "camera": "default"
+    },
+    "id": 237
+  },
+  {
+    "timestamp": "2025-07-03 11:45:36",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6547744870185852,
+      "camera": "default"
+    },
+    "id": 238
+  },
+  {
+    "timestamp": "2025-07-03 11:45:36",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6554932594299316,
+      "camera": "default"
+    },
+    "id": 239
+  },
+  {
+    "timestamp": "2025-07-03 11:45:36",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6563885807991028,
+      "camera": "default"
+    },
+    "id": 240
+  },
+  {
+    "timestamp": "2025-07-03 11:45:36",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.656146764755249,
+      "camera": "default"
+    },
+    "id": 241
+  },
+  {
+    "timestamp": "2025-07-03 11:45:36",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6550310254096985,
+      "camera": "default"
+    },
+    "id": 242
+  },
+  {
+    "timestamp": "2025-07-03 11:45:36",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.655933141708374,
+      "camera": "default"
+    },
+    "id": 243
+  },
+  {
+    "timestamp": "2025-07-03 11:45:36",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6555795073509216,
+      "camera": "default"
+    },
+    "id": 244
+  },
+  {
+    "timestamp": "2025-07-03 11:45:36",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.653079628944397,
+      "camera": "default"
+    },
+    "id": 245
+  },
+  {
+    "timestamp": "2025-07-03 11:45:36",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6533309817314148,
+      "camera": "default"
+    },
+    "id": 246
+  },
+  {
+    "timestamp": "2025-07-03 11:45:36",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6547816395759583,
+      "camera": "default"
+    },
+    "id": 247
+  },
+  {
+    "timestamp": "2025-07-03 11:45:36",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6536535620689392,
+      "camera": "default"
+    },
+    "id": 248
+  },
+  {
+    "timestamp": "2025-07-03 11:45:37",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6554861068725586,
+      "camera": "default"
+    },
+    "id": 249
+  },
+  {
+    "timestamp": "2025-07-03 11:45:37",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6543213725090027,
+      "camera": "default"
+    },
+    "id": 250
+  },
+  {
+    "timestamp": "2025-07-03 11:45:37",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6529461145401001,
+      "camera": "default"
+    },
+    "id": 251
+  },
+  {
+    "timestamp": "2025-07-03 11:45:37",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6515066623687744,
+      "camera": "default"
+    },
+    "id": 252
+  },
+  {
+    "timestamp": "2025-07-03 11:45:37",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6510495543479919,
+      "camera": "default"
+    },
+    "id": 253
+  },
+  {
+    "timestamp": "2025-07-03 11:45:37",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.653631865978241,
+      "camera": "default"
+    },
+    "id": 254
+  },
+  {
+    "timestamp": "2025-07-03 11:45:37",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.655572235584259,
+      "camera": "default"
+    },
+    "id": 255
+  },
+  {
+    "timestamp": "2025-07-03 11:45:37",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6561260223388672,
+      "camera": "default"
+    },
+    "id": 256
+  },
+  {
+    "timestamp": "2025-07-03 11:45:37",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.652814507484436,
+      "camera": "default"
+    },
+    "id": 257
+  },
+  {
+    "timestamp": "2025-07-03 11:45:37",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6499394774436951,
+      "camera": "default"
+    },
+    "id": 258
+  },
+  {
+    "timestamp": "2025-07-03 11:45:37",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6498854160308838,
+      "camera": "default"
+    },
+    "id": 259
+  },
+  {
+    "timestamp": "2025-07-03 11:45:37",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6521391272544861,
+      "camera": "default"
+    },
+    "id": 260
+  },
+  {
+    "timestamp": "2025-07-03 11:45:37",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6517595052719116,
+      "camera": "default"
+    },
+    "id": 261
+  },
+  {
+    "timestamp": "2025-07-03 11:45:37",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6485128402709961,
+      "camera": "default"
+    },
+    "id": 262
+  },
+  {
+    "timestamp": "2025-07-03 11:45:37",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6488097906112671,
+      "camera": "default"
+    },
+    "id": 263
+  },
+  {
+    "timestamp": "2025-07-03 11:45:38",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6467558145523071,
+      "camera": "default"
+    },
+    "id": 264
+  },
+  {
+    "timestamp": "2025-07-03 11:45:38",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6470382213592529,
+      "camera": "default"
+    },
+    "id": 265
+  },
+  {
+    "timestamp": "2025-07-03 11:45:38",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6467070579528809,
+      "camera": "default"
+    },
+    "id": 266
+  },
+  {
+    "timestamp": "2025-07-03 11:45:38",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6487455368041992,
+      "camera": "default"
+    },
+    "id": 267
+  },
+  {
+    "timestamp": "2025-07-03 11:45:38",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6477452516555786,
+      "camera": "default"
+    },
+    "id": 268
+  },
+  {
+    "timestamp": "2025-07-03 11:45:38",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.648624837398529,
+      "camera": "default"
+    },
+    "id": 269
+  },
+  {
+    "timestamp": "2025-07-03 11:45:38",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6475548148155212,
+      "camera": "default"
+    },
+    "id": 270
+  },
+  {
+    "timestamp": "2025-07-03 11:45:38",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6490321159362793,
+      "camera": "default"
+    },
+    "id": 271
+  },
+  {
+    "timestamp": "2025-07-03 11:45:38",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.650208055973053,
+      "camera": "default"
+    },
+    "id": 272
+  },
+  {
+    "timestamp": "2025-07-03 11:45:38",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6483314633369446,
+      "camera": "default"
+    },
+    "id": 273
+  },
+  {
+    "timestamp": "2025-07-03 11:45:38",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.645788311958313,
+      "camera": "default"
+    },
+    "id": 274
+  },
+  {
+    "timestamp": "2025-07-03 11:45:38",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6488582491874695,
+      "camera": "default"
+    },
+    "id": 275
+  },
+  {
+    "timestamp": "2025-07-03 11:45:38",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6506643295288086,
+      "camera": "default"
+    },
+    "id": 276
+  },
+  {
+    "timestamp": "2025-07-03 11:45:38",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6498379111289978,
+      "camera": "default"
+    },
+    "id": 277
+  },
+  {
+    "timestamp": "2025-07-03 11:45:38",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6516633629798889,
+      "camera": "default"
+    },
+    "id": 278
+  },
+  {
+    "timestamp": "2025-07-03 11:45:39",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6489157676696777,
+      "camera": "default"
+    },
+    "id": 279
+  },
+  {
+    "timestamp": "2025-07-03 11:45:39",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6477756500244141,
+      "camera": "default"
+    },
+    "id": 280
+  },
+  {
+    "timestamp": "2025-07-03 11:45:39",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6466144323348999,
+      "camera": "default"
+    },
+    "id": 281
+  },
+  {
+    "timestamp": "2025-07-03 11:45:39",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6478216052055359,
+      "camera": "default"
+    },
+    "id": 282
+  },
+  {
+    "timestamp": "2025-07-03 11:45:39",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6489750146865845,
+      "camera": "default"
+    },
+    "id": 283
+  },
+  {
+    "timestamp": "2025-07-03 11:45:39",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6476176381111145,
+      "camera": "default"
+    },
+    "id": 284
+  },
+  {
+    "timestamp": "2025-07-03 11:45:39",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6442793011665344,
+      "camera": "default"
+    },
+    "id": 285
+  },
+  {
+    "timestamp": "2025-07-03 11:45:39",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.646089494228363,
+      "camera": "default"
+    },
+    "id": 286
+  },
+  {
+    "timestamp": "2025-07-03 11:45:39",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6459686160087585,
+      "camera": "default"
+    },
+    "id": 287
+  },
+  {
+    "timestamp": "2025-07-03 11:45:39",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6460642218589783,
+      "camera": "default"
+    },
+    "id": 288
+  },
+  {
+    "timestamp": "2025-07-03 11:45:39",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6447257399559021,
+      "camera": "default"
+    },
+    "id": 289
+  },
+  {
+    "timestamp": "2025-07-03 11:45:39",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6462298631668091,
+      "camera": "default"
+    },
+    "id": 290
+  },
+  {
+    "timestamp": "2025-07-03 11:45:39",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6451382637023926,
+      "camera": "default"
+    },
+    "id": 291
+  },
+  {
+    "timestamp": "2025-07-03 11:45:39",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6447799801826477,
+      "camera": "default"
+    },
+    "id": 292
+  },
+  {
+    "timestamp": "2025-07-03 11:45:39",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6456610560417175,
+      "camera": "default"
+    },
+    "id": 293
+  },
+  {
+    "timestamp": "2025-07-03 11:45:40",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6462666392326355,
+      "camera": "default"
+    },
+    "id": 294
+  },
+  {
+    "timestamp": "2025-07-03 11:45:40",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6456779837608337,
+      "camera": "default"
+    },
+    "id": 295
+  },
+  {
+    "timestamp": "2025-07-03 11:45:40",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6458237767219543,
+      "camera": "default"
+    },
+    "id": 296
+  },
+  {
+    "timestamp": "2025-07-03 11:45:40",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6459243297576904,
+      "camera": "default"
+    },
+    "id": 297
+  },
+  {
+    "timestamp": "2025-07-03 11:45:40",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6466637849807739,
+      "camera": "default"
+    },
+    "id": 298
+  },
+  {
+    "timestamp": "2025-07-03 11:45:40",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.647786557674408,
+      "camera": "default"
+    },
+    "id": 299
+  },
+  {
+    "timestamp": "2025-07-03 11:45:40",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6452592015266418,
+      "camera": "default"
+    },
+    "id": 300
+  },
+  {
+    "timestamp": "2025-07-03 11:45:40",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6448723673820496,
+      "camera": "default"
+    },
+    "id": 301
+  },
+  {
+    "timestamp": "2025-07-03 11:45:40",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6462886333465576,
+      "camera": "default"
+    },
+    "id": 302
+  },
+  {
+    "timestamp": "2025-07-03 11:45:40",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6461684703826904,
+      "camera": "default"
+    },
+    "id": 303
+  },
+  {
+    "timestamp": "2025-07-03 11:45:40",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6449679732322693,
+      "camera": "default"
+    },
+    "id": 304
+  },
+  {
+    "timestamp": "2025-07-03 11:45:40",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6459693908691406,
+      "camera": "default"
+    },
+    "id": 305
+  },
+  {
+    "timestamp": "2025-07-03 11:45:40",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6461301445960999,
+      "camera": "default"
+    },
+    "id": 306
+  },
+  {
+    "timestamp": "2025-07-03 11:45:40",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.645876407623291,
+      "camera": "default"
+    },
+    "id": 307
+  },
+  {
+    "timestamp": "2025-07-03 11:45:40",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6449912786483765,
+      "camera": "default"
+    },
+    "id": 308
+  },
+  {
+    "timestamp": "2025-07-03 11:45:41",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6473546028137207,
+      "camera": "default"
+    },
+    "id": 309
+  },
+  {
+    "timestamp": "2025-07-03 11:45:41",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6465813517570496,
+      "camera": "default"
+    },
+    "id": 310
+  },
+  {
+    "timestamp": "2025-07-03 11:45:41",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6455264687538147,
+      "camera": "default"
+    },
+    "id": 311
+  },
+  {
+    "timestamp": "2025-07-03 11:45:41",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6449180841445923,
+      "camera": "default"
+    },
+    "id": 312
+  },
+  {
+    "timestamp": "2025-07-03 11:45:41",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6462261080741882,
+      "camera": "default"
+    },
+    "id": 313
+  },
+  {
+    "timestamp": "2025-07-03 11:45:41",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.646539032459259,
+      "camera": "default"
+    },
+    "id": 314
+  },
+  {
+    "timestamp": "2025-07-03 11:45:41",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6453201174736023,
+      "camera": "default"
+    },
+    "id": 315
+  },
+  {
+    "timestamp": "2025-07-03 11:45:41",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6435450315475464,
+      "camera": "default"
+    },
+    "id": 316
+  },
+  {
+    "timestamp": "2025-07-03 11:45:41",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6445602774620056,
+      "camera": "default"
+    },
+    "id": 317
+  },
+  {
+    "timestamp": "2025-07-03 11:45:41",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6462441086769104,
+      "camera": "default"
+    },
+    "id": 318
+  },
+  {
+    "timestamp": "2025-07-03 11:45:41",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6484657526016235,
+      "camera": "default"
+    },
+    "id": 319
+  },
+  {
+    "timestamp": "2025-07-03 11:45:41",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6495077610015869,
+      "camera": "default"
+    },
+    "id": 320
+  },
+  {
+    "timestamp": "2025-07-03 11:45:41",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6485320925712585,
+      "camera": "default"
+    },
+    "id": 321
+  },
+  {
+    "timestamp": "2025-07-03 11:45:41",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6478915810585022,
+      "camera": "default"
+    },
+    "id": 322
+  },
+  {
+    "timestamp": "2025-07-03 11:45:41",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6477581262588501,
+      "camera": "default"
+    },
+    "id": 323
+  },
+  {
+    "timestamp": "2025-07-03 11:45:42",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6459274291992188,
+      "camera": "default"
+    },
+    "id": 324
+  },
+  {
+    "timestamp": "2025-07-03 11:45:42",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6472175121307373,
+      "camera": "default"
+    },
+    "id": 325
+  },
+  {
+    "timestamp": "2025-07-03 11:45:42",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6495764851570129,
+      "camera": "default"
+    },
+    "id": 326
+  },
+  {
+    "timestamp": "2025-07-03 11:45:42",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6483408212661743,
+      "camera": "default"
+    },
+    "id": 327
+  },
+  {
+    "timestamp": "2025-07-03 11:45:42",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6465739607810974,
+      "camera": "default"
+    },
+    "id": 328
+  },
+  {
+    "timestamp": "2025-07-03 11:45:42",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6478409171104431,
+      "camera": "default"
+    },
+    "id": 329
+  },
+  {
+    "timestamp": "2025-07-03 11:45:42",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6454455256462097,
+      "camera": "default"
+    },
+    "id": 330
+  },
+  {
+    "timestamp": "2025-07-03 11:45:42",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6443912386894226,
+      "camera": "default"
+    },
+    "id": 331
+  },
+  {
+    "timestamp": "2025-07-03 11:45:42",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6458030343055725,
+      "camera": "default"
+    },
+    "id": 332
+  },
+  {
+    "timestamp": "2025-07-03 11:45:42",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6456279754638672,
+      "camera": "default"
+    },
+    "id": 333
+  },
+  {
+    "timestamp": "2025-07-03 11:45:42",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6482989192008972,
+      "camera": "default"
+    },
+    "id": 334
+  },
+  {
+    "timestamp": "2025-07-03 11:45:42",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.650445282459259,
+      "camera": "default"
+    },
+    "id": 335
+  },
+  {
+    "timestamp": "2025-07-03 11:45:42",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6487360000610352,
+      "camera": "default"
+    },
+    "id": 336
+  },
+  {
+    "timestamp": "2025-07-03 11:45:42",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6476553082466125,
+      "camera": "default"
+    },
+    "id": 337
+  },
+  {
+    "timestamp": "2025-07-03 11:45:42",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6462491154670715,
+      "camera": "default"
+    },
+    "id": 338
+  },
+  {
+    "timestamp": "2025-07-03 11:45:43",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6464076638221741,
+      "camera": "default"
+    },
+    "id": 339
+  },
+  {
+    "timestamp": "2025-07-03 11:45:43",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6469197869300842,
+      "camera": "default"
+    },
+    "id": 340
+  },
+  {
+    "timestamp": "2025-07-03 11:45:43",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6485346555709839,
+      "camera": "default"
+    },
+    "id": 341
+  },
+  {
+    "timestamp": "2025-07-03 11:45:43",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6483255624771118,
+      "camera": "default"
+    },
+    "id": 342
+  },
+  {
+    "timestamp": "2025-07-03 11:45:43",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6503646373748779,
+      "camera": "default"
+    },
+    "id": 343
+  },
+  {
+    "timestamp": "2025-07-03 11:45:43",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6521891355514526,
+      "camera": "default"
+    },
+    "id": 344
+  },
+  {
+    "timestamp": "2025-07-03 11:45:43",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.652021586894989,
+      "camera": "default"
+    },
+    "id": 345
+  },
+  {
+    "timestamp": "2025-07-03 11:45:43",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6520709991455078,
+      "camera": "default"
+    },
+    "id": 346
+  },
+  {
+    "timestamp": "2025-07-03 11:45:43",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6591297388076782,
+      "camera": "default"
+    },
+    "id": 347
+  },
+  {
+    "timestamp": "2025-07-03 11:45:43",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6558480858802795,
+      "camera": "default"
+    },
+    "id": 348
+  },
+  {
+    "timestamp": "2025-07-03 11:45:43",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6569319367408752,
+      "camera": "default"
+    },
+    "id": 349
+  },
+  {
+    "timestamp": "2025-07-03 11:45:43",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6591259241104126,
+      "camera": "default"
+    },
+    "id": 350
+  },
+  {
+    "timestamp": "2025-07-03 11:45:43",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.651470959186554,
+      "camera": "default"
+    },
+    "id": 351
+  },
+  {
+    "timestamp": "2025-07-03 11:45:43",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6470101475715637,
+      "camera": "default"
+    },
+    "id": 352
+  },
+  {
+    "timestamp": "2025-07-03 11:45:43",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6461421847343445,
+      "camera": "default"
+    },
+    "id": 353
+  },
+  {
+    "timestamp": "2025-07-03 11:45:44",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.651146650314331,
+      "camera": "default"
+    },
+    "id": 354
+  },
+  {
+    "timestamp": "2025-07-03 11:45:44",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6523744463920593,
+      "camera": "default"
+    },
+    "id": 355
+  },
+  {
+    "timestamp": "2025-07-03 11:45:44",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6502171754837036,
+      "camera": "default"
+    },
+    "id": 356
+  },
+  {
+    "timestamp": "2025-07-03 11:45:44",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6592628955841064,
+      "camera": "default"
+    },
+    "id": 357
+  },
+  {
+    "timestamp": "2025-07-03 11:45:44",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6621437668800354,
+      "camera": "default"
+    },
+    "id": 358
+  },
+  {
+    "timestamp": "2025-07-03 11:45:44",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6599168181419373,
+      "camera": "default"
+    },
+    "id": 359
+  },
+  {
+    "timestamp": "2025-07-03 11:45:44",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.655083179473877,
+      "camera": "default"
+    },
+    "id": 360
+  },
+  {
+    "timestamp": "2025-07-03 11:45:44",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.656877875328064,
+      "camera": "default"
+    },
+    "id": 361
+  },
+  {
+    "timestamp": "2025-07-03 11:45:44",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6557242274284363,
+      "camera": "default"
+    },
+    "id": 362
+  },
+  {
+    "timestamp": "2025-07-03 11:45:44",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6540665030479431,
+      "camera": "default"
+    },
+    "id": 363
+  },
+  {
+    "timestamp": "2025-07-03 11:45:44",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6515632271766663,
+      "camera": "default"
+    },
+    "id": 364
+  },
+  {
+    "timestamp": "2025-07-03 11:45:44",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6495921015739441,
+      "camera": "default"
+    },
+    "id": 365
+  },
+  {
+    "timestamp": "2025-07-03 11:45:44",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6496652960777283,
+      "camera": "default"
+    },
+    "id": 366
+  },
+  {
+    "timestamp": "2025-07-03 11:45:44",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6506997346878052,
+      "camera": "default"
+    },
+    "id": 367
+  },
+  {
+    "timestamp": "2025-07-03 11:45:44",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6509950757026672,
+      "camera": "default"
+    },
+    "id": 368
+  },
+  {
+    "timestamp": "2025-07-03 11:45:45",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6554321050643921,
+      "camera": "default"
+    },
+    "id": 369
+  },
+  {
+    "timestamp": "2025-07-03 11:45:45",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6553876399993896,
+      "camera": "default"
+    },
+    "id": 370
+  },
+  {
+    "timestamp": "2025-07-03 11:45:45",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.655434250831604,
+      "camera": "default"
+    },
+    "id": 371
+  },
+  {
+    "timestamp": "2025-07-03 11:45:45",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6549811363220215,
+      "camera": "default"
+    },
+    "id": 372
+  },
+  {
+    "timestamp": "2025-07-03 11:45:45",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6553087830543518,
+      "camera": "default"
+    },
+    "id": 373
+  },
+  {
+    "timestamp": "2025-07-03 11:45:45",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.653838574886322,
+      "camera": "default"
+    },
+    "id": 374
+  },
+  {
+    "timestamp": "2025-07-03 11:45:45",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6542457342147827,
+      "camera": "default"
+    },
+    "id": 375
+  },
+  {
+    "timestamp": "2025-07-03 11:45:45",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6555463075637817,
+      "camera": "default"
+    },
+    "id": 376
+  },
+  {
+    "timestamp": "2025-07-03 11:45:45",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.652702808380127,
+      "camera": "default"
+    },
+    "id": 377
+  },
+  {
+    "timestamp": "2025-07-03 11:45:45",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6529632210731506,
+      "camera": "default"
+    },
+    "id": 378
+  },
+  {
+    "timestamp": "2025-07-03 11:45:45",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6533252596855164,
+      "camera": "default"
+    },
+    "id": 379
+  },
+  {
+    "timestamp": "2025-07-03 11:45:45",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6541570425033569,
+      "camera": "default"
+    },
+    "id": 380
+  },
+  {
+    "timestamp": "2025-07-03 11:45:45",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.653913140296936,
+      "camera": "default"
+    },
+    "id": 381
+  },
+  {
+    "timestamp": "2025-07-03 11:45:45",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6549650430679321,
+      "camera": "default"
+    },
+    "id": 382
+  },
+  {
+    "timestamp": "2025-07-03 11:45:45",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6532331109046936,
+      "camera": "default"
+    },
+    "id": 383
+  },
+  {
+    "timestamp": "2025-07-03 11:45:46",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6524937152862549,
+      "camera": "default"
+    },
+    "id": 384
+  },
+  {
+    "timestamp": "2025-07-03 11:45:46",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6530983448028564,
+      "camera": "default"
+    },
+    "id": 385
+  },
+  {
+    "timestamp": "2025-07-03 11:45:46",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6519776582717896,
+      "camera": "default"
+    },
+    "id": 386
+  },
+  {
+    "timestamp": "2025-07-03 11:45:46",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6549079418182373,
+      "camera": "default"
+    },
+    "id": 387
+  },
+  {
+    "timestamp": "2025-07-03 11:45:46",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.654772162437439,
+      "camera": "default"
+    },
+    "id": 388
+  },
+  {
+    "timestamp": "2025-07-03 11:45:46",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6540834903717041,
+      "camera": "default"
+    },
+    "id": 389
+  },
+  {
+    "timestamp": "2025-07-03 11:45:46",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6556625366210938,
+      "camera": "default"
+    },
+    "id": 390
+  },
+  {
+    "timestamp": "2025-07-03 11:45:46",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6531670689582825,
+      "camera": "default"
+    },
+    "id": 391
+  },
+  {
+    "timestamp": "2025-07-03 11:45:46",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6539152264595032,
+      "camera": "default"
+    },
+    "id": 392
+  },
+  {
+    "timestamp": "2025-07-03 11:45:46",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6535956859588623,
+      "camera": "default"
+    },
+    "id": 393
+  },
+  {
+    "timestamp": "2025-07-03 11:45:46",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6545432806015015,
+      "camera": "default"
+    },
+    "id": 394
+  },
+  {
+    "timestamp": "2025-07-03 11:45:46",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.654259204864502,
+      "camera": "default"
+    },
+    "id": 395
+  },
+  {
+    "timestamp": "2025-07-03 11:45:46",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6554846167564392,
+      "camera": "default"
+    },
+    "id": 396
+  },
+  {
+    "timestamp": "2025-07-03 11:45:46",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6541064381599426,
+      "camera": "default"
+    },
+    "id": 397
+  },
+  {
+    "timestamp": "2025-07-03 11:45:46",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.653347909450531,
+      "camera": "default"
+    },
+    "id": 398
+  },
+  {
+    "timestamp": "2025-07-03 11:45:47",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6525996923446655,
+      "camera": "default"
+    },
+    "id": 399
+  },
+  {
+    "timestamp": "2025-07-03 11:45:47",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6534411311149597,
+      "camera": "default"
+    },
+    "id": 400
+  },
+  {
+    "timestamp": "2025-07-03 11:45:47",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6518146991729736,
+      "camera": "default"
+    },
+    "id": 401
+  },
+  {
+    "timestamp": "2025-07-03 11:45:47",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6509749889373779,
+      "camera": "default"
+    },
+    "id": 402
+  },
+  {
+    "timestamp": "2025-07-03 11:45:47",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6518349051475525,
+      "camera": "default"
+    },
+    "id": 403
+  },
+  {
+    "timestamp": "2025-07-03 11:45:47",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6547460556030273,
+      "camera": "default"
+    },
+    "id": 404
+  },
+  {
+    "timestamp": "2025-07-03 11:45:47",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6568469405174255,
+      "camera": "default"
+    },
+    "id": 405
+  },
+  {
+    "timestamp": "2025-07-03 11:45:47",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6594275236129761,
+      "camera": "default"
+    },
+    "id": 406
+  },
+  {
+    "timestamp": "2025-07-03 11:45:47",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6593627333641052,
+      "camera": "default"
+    },
+    "id": 407
+  },
+  {
+    "timestamp": "2025-07-03 11:45:47",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6593065857887268,
+      "camera": "default"
+    },
+    "id": 408
+  },
+  {
+    "timestamp": "2025-07-03 11:45:47",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6607877612113953,
+      "camera": "default"
+    },
+    "id": 409
+  },
+  {
+    "timestamp": "2025-07-03 11:45:47",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6620963215827942,
+      "camera": "default"
+    },
+    "id": 410
+  },
+  {
+    "timestamp": "2025-07-03 11:45:47",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6610602140426636,
+      "camera": "default"
+    },
+    "id": 411
+  },
+  {
+    "timestamp": "2025-07-03 11:45:47",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6627357006072998,
+      "camera": "default"
+    },
+    "id": 412
+  },
+  {
+    "timestamp": "2025-07-03 11:45:47",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6612074375152588,
+      "camera": "default"
+    },
+    "id": 413
+  },
+  {
+    "timestamp": "2025-07-03 11:45:48",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6629195809364319,
+      "camera": "default"
+    },
+    "id": 414
+  },
+  {
+    "timestamp": "2025-07-03 11:45:48",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6623225808143616,
+      "camera": "default"
+    },
+    "id": 415
+  },
+  {
+    "timestamp": "2025-07-03 11:45:48",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6604645848274231,
+      "camera": "default"
+    },
+    "id": 416
+  },
+  {
+    "timestamp": "2025-07-03 11:45:48",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6613326668739319,
+      "camera": "default"
+    },
+    "id": 417
+  },
+  {
+    "timestamp": "2025-07-03 11:45:48",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6603049039840698,
+      "camera": "default"
+    },
+    "id": 418
+  },
+  {
+    "timestamp": "2025-07-03 11:45:48",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6630637049674988,
+      "camera": "default"
+    },
+    "id": 419
+  },
+  {
+    "timestamp": "2025-07-03 11:45:48",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6630865335464478,
+      "camera": "default"
+    },
+    "id": 420
+  },
+  {
+    "timestamp": "2025-07-03 11:45:48",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6641826033592224,
+      "camera": "default"
+    },
+    "id": 421
+  },
+  {
+    "timestamp": "2025-07-03 11:45:48",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6661281585693359,
+      "camera": "default"
+    },
+    "id": 422
+  },
+  {
+    "timestamp": "2025-07-03 11:45:48",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6646949052810669,
+      "camera": "default"
+    },
+    "id": 423
+  },
+  {
+    "timestamp": "2025-07-03 11:45:48",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6645956039428711,
+      "camera": "default"
+    },
+    "id": 424
+  },
+  {
+    "timestamp": "2025-07-03 11:45:48",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.662388026714325,
+      "camera": "default"
+    },
+    "id": 425
+  },
+  {
+    "timestamp": "2025-07-03 11:45:48",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6642476320266724,
+      "camera": "default"
+    },
+    "id": 426
+  },
+  {
+    "timestamp": "2025-07-03 11:45:48",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6645960807800293,
+      "camera": "default"
+    },
+    "id": 427
+  },
+  {
+    "timestamp": "2025-07-03 11:45:48",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.664334774017334,
+      "camera": "default"
+    },
+    "id": 428
+  },
+  {
+    "timestamp": "2025-07-03 11:45:49",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6622259616851807,
+      "camera": "default"
+    },
+    "id": 429
+  },
+  {
+    "timestamp": "2025-07-03 11:45:49",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6634706258773804,
+      "camera": "default"
+    },
+    "id": 430
+  },
+  {
+    "timestamp": "2025-07-03 11:45:49",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6606501936912537,
+      "camera": "default"
+    },
+    "id": 431
+  },
+  {
+    "timestamp": "2025-07-03 11:45:49",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6592147946357727,
+      "camera": "default"
+    },
+    "id": 432
+  },
+  {
+    "timestamp": "2025-07-03 11:45:49",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6563448309898376,
+      "camera": "default"
+    },
+    "id": 433
+  },
+  {
+    "timestamp": "2025-07-03 11:45:49",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6561628580093384,
+      "camera": "default"
+    },
+    "id": 434
+  },
+  {
+    "timestamp": "2025-07-03 11:45:49",
+    "type": "visual",
+    "details": {
+      "class": "human",
+      "confidence": 0.6600329279899597,
+      "camera": "default"
+    },
+    "id": 435
+  }
+]

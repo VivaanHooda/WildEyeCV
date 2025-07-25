@@ -1,483 +1,852 @@
 import torch
+import torch.nn as nn
+import torch.optim as optim
 from torch.utils.data import Dataset, DataLoader, ConcatDataset
 from torchvision.models.detection import fasterrcnn_mobilenet_v3_large_320_fpn
 from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
-from torchvision.transforms import functional as F
-import torchvision.transforms as T
-from pycocotools.coco import COCO
-from PIL import Image, ImageDraw
-import os
+from torchvision import transforms
+import torchvision.transforms.functional as F
+from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 import json
+import os
+import cv2
 import numpy as np
-import pandas as pd
+import matplotlib.pyplot as plt
 from tqdm import tqdm
-import requests
-import gc
-import ssl
-import urllib.request
 import random
+import math
+import time
 from collections import defaultdict
+import albumentations as A
+from albumentations.pytorch import ToTensorV2
+import warnings
 
-class EnhancedCOCOAnimalDataset(Dataset):
-    def __init__(self, root_dir, annotation_file, transform=None, 
-                 max_images_per_category=None, min_area=100, augment=True):
-        self.root_dir = root_dir
-        self.coco = COCO(annotation_file)
-        self.min_area = min_area
+# RunPod optimization - suppress warnings
+warnings.filterwarnings('ignore')
+
+class AdvancedTransforms:
+    """Advanced data augmentation transforms - Memory optimized for RunPod"""
+    
+    def __init__(self, is_training=True):
+        self.is_training = is_training
         
-        # Enhanced COCO animal category mapping (10 animals)
-        self.category_mapping = {
-            16: 0,   # bird -> 0
-            17: 1,   # cat -> 1  
-            18: 2,   # dog -> 2
-            19: 3,   # horse -> 3
-            20: 4,   # sheep -> 4
-            21: 5,   # cow -> 5
-            22: 6,   # elephant -> 6
-            23: 7,   # bear -> 7
-            24: 8,   # zebra -> 8
-            25: 9    # giraffe -> 9
-        }
-        
-        # Get images containing selected animals with better distribution
-        self.image_ids = self._get_balanced_image_ids(max_images_per_category)
-        
-        # Enhanced transforms with augmentation
-        if augment:
-            self.transform = transform or T.Compose([
-                T.ToTensor(),
-                T.RandomHorizontalFlip(0.5),
-                T.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.1),
-                T.RandomAdjustSharpness(2, p=0.5),
-            ])
+        if is_training:
+            self.transform = A.Compose([
+                A.OneOf([
+                    A.HorizontalFlip(p=0.5),
+                    A.VerticalFlip(p=0.1),
+                    A.RandomRotate90(p=0.2),
+                ], p=0.7),
+                
+                A.OneOf([
+                    A.MotionBlur(blur_limit=3, p=0.3),  # Reduced blur_limit for memory
+                    A.GaussianBlur(blur_limit=3, p=0.3),
+                    A.MedianBlur(blur_limit=3, p=0.2),
+                ], p=0.3),
+                
+                A.OneOf([
+                    A.RandomBrightnessContrast(brightness_limit=0.2, contrast_limit=0.2, p=0.3),
+                    A.HueSaturationValue(hue_shift_limit=10, sat_shift_limit=15, val_shift_limit=10, p=0.3),
+                    A.CLAHE(clip_limit=2.0, tile_grid_size=(8, 8), p=0.3),
+                ], p=0.5),
+                
+                # Simplified weather effects for RunPod
+                A.OneOf([
+                    A.RandomBrightnessContrast(brightness_limit=0.1, contrast_limit=0.1, p=0.5),
+                ], p=0.2),
+                
+                A.Resize(height=640, width=640, p=1.0),  # Smaller size for memory optimization
+                A.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+                ToTensorV2()
+            ], bbox_params=A.BboxParams(format='pascal_voc', label_fields=['labels']))
         else:
-            self.transform = transform or T.Compose([T.ToTensor()])
+            self.transform = A.Compose([
+                A.Resize(height=640, width=640, p=1.0),  # Smaller validation size
+                A.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+                ToTensorV2()
+            ], bbox_params=A.BboxParams(format='pascal_voc', label_fields=['labels']))
     
-    def _get_balanced_image_ids(self, max_images_per_category):
-        """Get balanced image IDs across all animal categories"""
-        category_images = defaultdict(set)
-        
-        # Collect images for each category
-        for cat_id in self.category_mapping.keys():
-            img_ids = self.coco.getImgIds(catIds=[cat_id])
-            category_images[cat_id] = set(img_ids)
-        
-        # Balance the dataset
-        if max_images_per_category:
-            for cat_id in category_images:
-                if len(category_images[cat_id]) > max_images_per_category:
-                    category_images[cat_id] = set(random.sample(
-                        list(category_images[cat_id]), max_images_per_category))
-        
-        # Combine all image IDs
-        all_image_ids = set()
-        for img_ids in category_images.values():
-            all_image_ids.update(img_ids)
-        
-        print(f"Selected {len(all_image_ids)} images for training")
-        for cat_id, img_ids in category_images.items():
-            cat_name = [name for name, idx in zip(self.get_category_names(), 
-                       range(len(self.category_mapping))) 
-                       if self.category_mapping[cat_id] == idx][0]
-            print(f"  {cat_name}: {len(img_ids)} images")
-        
-        return list(all_image_ids)
+    def __call__(self, image, bboxes, labels):
+        transformed = self.transform(image=np.array(image), bboxes=bboxes, labels=labels)
+        return transformed['image'], transformed['bboxes'], transformed['labels']
+
+class MixUpCollate:
+    """MixUp data augmentation for object detection"""
     
-    def get_category_names(self):
-        return ['bird', 'cat', 'dog', 'horse', 'sheep', 'cow', 
-                'elephant', 'bear', 'zebra', 'giraffe']
+    def __init__(self, alpha=0.2):
+        self.alpha = alpha
+    
+    def __call__(self, batch):
+        if random.random() > 0.5:  # Apply MixUp 50% of the time
+            return self.mixup_batch(batch)
+        else:
+            return self.standard_collate(batch)
+    
+    def mixup_batch(self, batch):
+        # Implement MixUp for object detection
+        # This is a simplified version - full implementation would be more complex
+        return self.standard_collate(batch)
+    
+    def standard_collate(self, batch):
+        images = []
+        targets = []
+        
+        for image, target in batch:
+            images.append(image)
+            targets.append(target)
+        
+        return images, targets
+
+class EnhancedCOCODataset(Dataset):
+    """Enhanced COCO dataset with advanced augmentations"""
+    
+    def __init__(self, root_dir, annotation_file, transforms=None, is_training=True):
+        self.root_dir = root_dir
+        self.transforms = transforms or AdvancedTransforms(is_training)
+        self.is_training = is_training
+        
+        # Load annotations
+        with open(annotation_file, 'r') as f:
+            self.coco_data = json.load(f)
+        
+        # COCO category mapping to our classes
+        self.coco_to_custom = {
+            1: 1,   # person -> human
+            16: 2,  # bird -> bird
+            17: 3,  # cat -> cat
+            18: 4,  # dog -> dog
+            19: 5,  # horse -> horse
+            20: 6,  # sheep -> sheep
+            21: 7,  # cow -> cow
+            22: 8,  # elephant -> elephant
+            23: 9,  # bear -> bear
+            24: 10, # zebra -> zebra
+            25: 11, # giraffe -> giraffe
+        }
+
+        # Pre-group annotations by image_id for performance
+        print("Pre-grouping annotations by image_id...")
+        self.annotations_by_image = {}
+        for ann in self.coco_data['annotations']:
+            if ann['category_id'] in self.coco_to_custom:
+                img_id = ann['image_id']
+                if img_id not in self.annotations_by_image:
+                    self.annotations_by_image[img_id] = []
+                self.annotations_by_image[img_id].append(ann)
+        print(f"✓ Grouped annotations for {len(self.annotations_by_image)} images")
+        
+        # Filter images that contain our target classes
+        self.valid_images = []
+        for image_info in self.coco_data['images']:
+            image_id = image_info['id']
+            annotations = self.annotations_by_image.get(image_id, [])
+            if annotations:
+                self.valid_images.append((image_info, annotations))
+        
+        print(f"Loaded {len(self.valid_images)} images with target classes")
     
     def __len__(self):
-        return len(self.image_ids)
+        return len(self.valid_images)
     
     def __getitem__(self, idx):
-        img_id = self.image_ids[idx]
-        img_info = self.coco.loadImgs(img_id)[0]
+        image_info, annotations = self.valid_images[idx]
         
         # Load image
-        img_path = os.path.join(self.root_dir, img_info['file_name'])
-        if not os.path.exists(img_path):
-            # Return a dummy sample if image doesn't exist
-            dummy_image = torch.zeros(3, 224, 224)
-            dummy_target = {
-                'boxes': torch.zeros(0, 4),
-                'labels': torch.zeros(0, dtype=torch.int64),
-                'image_id': torch.tensor([idx]),
-                'area': torch.zeros(0),
-                'iscrowd': torch.zeros(0, dtype=torch.int64)
-            }
-            return dummy_image, dummy_target
-            
-        image = Image.open(img_path).convert('RGB')
+        image_path = os.path.join(self.root_dir, image_info['file_name'])
+        image = Image.open(image_path).convert('RGB')
         
-        # Get annotations
-        ann_ids = self.coco.getAnnIds(imgIds=img_id)
-        annotations = self.coco.loadAnns(ann_ids)
-        
+        # Process annotations
         boxes = []
         labels = []
-        areas = []
-        iscrowd = []
         
         for ann in annotations:
-            if ann['category_id'] in self.category_mapping:
-                # Filter small objects
-                if ann['area'] < self.min_area:
-                    continue
-                    
+            if ann['category_id'] in self.coco_to_custom:
+                # Convert COCO bbox format (x, y, width, height) to (x1, y1, x2, y2)
                 x, y, w, h = ann['bbox']
-                # Ensure valid bounding box
-                if w > 1 and h > 1:
-                    boxes.append([x, y, x+w, y+h])
-                    labels.append(self.category_mapping[ann['category_id']])
-                    areas.append(ann['area'])
-                    iscrowd.append(ann.get('iscrowd', 0))
+                boxes.append([x, y, x + w, y + h])
+                labels.append(self.coco_to_custom[ann['category_id']])
         
-        # Handle case where no valid annotations exist
-        if len(boxes) == 0:
-            boxes = torch.zeros(0, 4)
-            labels = torch.zeros(0, dtype=torch.int64)
-            areas = torch.zeros(0)
-            iscrowd = torch.zeros(0, dtype=torch.int64)
-        else:
-            boxes = torch.as_tensor(boxes, dtype=torch.float32)
-            labels = torch.as_tensor(labels, dtype=torch.int64)
-            areas = torch.as_tensor(areas, dtype=torch.float32)
-            iscrowd = torch.as_tensor(iscrowd, dtype=torch.int64)
+        if not boxes:
+            # Return empty detection if no valid boxes
+            return torch.zeros((3, 640, 640)), {  # Updated size
+                'boxes': torch.zeros((0, 4)),
+                'labels': torch.zeros((0,), dtype=torch.int64),
+                'image_id': torch.tensor([image_info['id']]),
+                'area': torch.zeros((0,)),
+                'iscrowd': torch.zeros((0,), dtype=torch.int64)
+            }
+        
+        # Apply transforms
+        if self.transforms:
+            image, boxes, labels = self.transforms(image, boxes, labels)
+        
+        # Convert to tensors
+        if not isinstance(image, torch.Tensor):
+            image = transforms.ToTensor()(image)
+        
+        boxes = torch.as_tensor(boxes, dtype=torch.float32)
+        labels = torch.as_tensor(labels, dtype=torch.int64)
+        
+        # Calculate areas
+        areas = (boxes[:, 3] - boxes[:, 1]) * (boxes[:, 2] - boxes[:, 0])
         
         target = {
             'boxes': boxes,
             'labels': labels,
-            'image_id': torch.tensor([idx]),
+            'image_id': torch.tensor([image_info['id']]),
             'area': areas,
-            'iscrowd': iscrowd
+            'iscrowd': torch.zeros((len(boxes),), dtype=torch.int64)
         }
         
-        if self.transform:
-            image = self.transform(image)
-            
         return image, target
-
-class EnhancedAnimalDetector:
-    def __init__(self, num_classes, weights_path=None, device=None):
-        # Auto-detect device
-        if device is None:
-            if torch.cuda.is_available():
-                self.device = torch.device('cuda')
-                print(f"Using GPU: {torch.cuda.get_device_name()}")
-            elif torch.backends.mps.is_available():
-                self.device = torch.device('mps')
-                print("Using Apple Silicon GPU (MPS)")
-            else:
-                self.device = torch.device('cpu')
-                print("Using CPU")
-        else:
-            self.device = device
+    
+class CompleteEnhancedDetector:
+    """Complete enhanced human and animal detector with RunPod optimization"""
+    
+    def __init__(self, num_classes=12):
+        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        self.num_classes = num_classes
         
-        # Fix SSL certificate issues on macOS
-        try:
-            ssl_context = ssl._create_unverified_context()
-            ssl._create_default_https_context = ssl._create_unverified_context
-        except AttributeError:
-            pass
+        # Class names
+        self.class_names = [
+            'background', 'human', 'bird', 'cat', 'dog', 'horse', 
+            'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe'
+        ]
         
-        # Initialize model with proper weights parameter
-        try:
-            from torchvision.models.detection import FasterRCNN_MobileNet_V3_Large_320_FPN_Weights
-            weights = FasterRCNN_MobileNet_V3_Large_320_FPN_Weights.COCO_V1
-            self.model = fasterrcnn_mobilenet_v3_large_320_fpn(weights=weights)
-        except ImportError:
-            self.model = fasterrcnn_mobilenet_v3_large_320_fpn(pretrained=True)
+        # Colors for visualization (BGR format for OpenCV)
+        self.colors = {
+            'human': (0, 255, 0),      # Green for humans
+            'bird': (255, 0, 0),       # Blue for birds
+            'cat': (0, 165, 255),      # Orange for cats
+            'dog': (0, 0, 255),        # Red for dogs
+            'horse': (255, 255, 0),    # Cyan for horses
+            'sheep': (255, 255, 255),  # White for sheep
+            'cow': (128, 0, 128),      # Purple for cows
+            'elephant': (128, 128, 128), # Gray for elephants
+            'bear': (0, 100, 0),       # Dark green for bears
+            'zebra': (255, 0, 255),    # Magenta for zebras
+            'giraffe': (0, 255, 255)   # Yellow for giraffes
+        }
         
-        # Modify the box predictor for our number of classes (+1 for background)
-        in_features = self.model.roi_heads.box_predictor.cls_score.in_features
-        self.model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes + 1)
-        
-        # Load trained weights if provided
-        if weights_path and os.path.exists(weights_path):
-            try:
-                checkpoint = torch.load(weights_path, map_location=self.device)
-                if isinstance(checkpoint, dict) and 'model_state_dict' in checkpoint:
-                    self.model.load_state_dict(checkpoint['model_state_dict'])
-                    print(f"✅ Loaded model and training state from {weights_path}")
-                else:
-                    self.model.load_state_dict(checkpoint)
-                    print(f"✅ Loaded model weights from {weights_path}")
-            except Exception as e:
-                print(f"⚠️ Failed to load custom weights: {e}")
-        
+        # Initialize model
+        self.model = self._create_model()
         self.model.to(self.device)
         
-        # Enhanced category names (10 animals)
-        self.category_names = [
-            'bird', 'cat', 'dog', 'horse', 'sheep', 
-            'cow', 'elephant', 'bear', 'zebra', 'giraffe'
-        ]
-
-    def predict(self, frame):
-        self.model.eval()
-        if isinstance(frame, np.ndarray):
-            frame = Image.fromarray(frame)
-        if isinstance(frame, Image.Image):
-            frame = F.to_tensor(frame)
-        frame = frame.unsqueeze(0).to(self.device)
+        # Training history
+        self.train_losses = []
+        self.val_losses = []
+        self.learning_rates = []
         
-        with torch.no_grad():
-            prediction = self.model(frame)[0]
+    def _create_model(self):
+        """Create enhanced Faster R-CNN model"""
+        model = fasterrcnn_mobilenet_v3_large_320_fpn(
+            pretrained=True,
+            trainable_backbone_layers=3  # Fine-tune more layers
+        )
         
-        return prediction
+        # Replace classifier
+        in_features = model.roi_heads.box_predictor.cls_score.in_features
+        model.roi_heads.box_predictor = FastRCNNPredictor(in_features, self.num_classes)
+        
+        return model
     
-    def draw_boxes(self, frame, prediction, confidence_threshold=0.5):
-        if isinstance(frame, torch.Tensor):
-            frame = F.to_pil_image(frame)
-        elif isinstance(frame, np.ndarray):
-            frame = Image.fromarray(frame)
-            
-        draw = ImageDraw.Draw(frame)
-        
-        boxes = prediction['boxes']
-        scores = prediction['scores']
-        labels = prediction['labels']
-        
-        for box, score, label in zip(boxes, scores, labels):
-            if score > confidence_threshold:
-                box = box.cpu().numpy()
-                label_idx = label.cpu().item()
-                if 0 <= label_idx < len(self.category_names):
-                    label_name = self.category_names[label_idx]
+    def create_optimizer(self, learning_rate=0.001):
+        """Create AdamW optimizer with weight decay"""
+        params = []
+        for name, param in self.model.named_parameters():
+            if param.requires_grad:
+                # Different learning rates for different parts
+                if 'backbone' in name:
+                    params.append({'params': param, 'lr': learning_rate * 0.1})
                 else:
-                    label_name = f"class_{label_idx}"
-                    
-                # Draw rectangle
-                draw.rectangle(box.tolist(), outline='red', width=3)
-                # Add label and score
-                text = f"{label_name}: {score:.2f}"
-                draw.text((box[0], box[1]-10), text, fill='red')
+                    params.append({'params': param, 'lr': learning_rate})
         
-        return frame
+        optimizer = optim.AdamW(params, weight_decay=0.0001)
+        return optimizer
     
-    def train_model(self, train_loader, val_loader=None, optimizer=None, scheduler=None, 
-                   num_epochs=10, accumulation_steps=4, save_every=2):
-        """Enhanced training with validation and checkpointing"""
+    def create_scheduler(self, optimizer, total_steps):
+        """Create learning rate scheduler with warmup"""
+        def lr_lambda(step):
+            if step < 1000:  # Warmup for first 1000 steps
+                return step / 1000.0
+            else:
+                # Cosine annealing after warmup
+                return 0.5 * (1 + math.cos(math.pi * (step - 1000) / (total_steps - 1000)))
+        
+        return optim.lr_scheduler.LambdaLR(optimizer, lr_lambda)
+
+    def train_epoch(self, dataloader, optimizer, scheduler, scaler, epoch):
+        """Train for one epoch with advanced features"""
         self.model.train()
+        epoch_loss = 0
+        num_batches = 0
         
-        if optimizer is None:
-            optimizer = torch.optim.AdamW(self.model.parameters(), lr=0.001, weight_decay=0.0001)
+        progress_bar = tqdm(dataloader, desc=f'Epoch {epoch}')
         
-        if scheduler is None:
-            scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=3, gamma=0.7)
-        
-        print(f"Starting training with {len(train_loader)} batches per epoch")
-        print(f"Using device: {self.device}")
-        
-        best_loss = float('inf')
-        training_history = []
-        
-        for epoch in range(num_epochs):
-            print(f"\nEpoch {epoch+1}/{num_epochs}")
-            print("-" * 50)
+        for batch_idx, (images, targets) in enumerate(progress_bar):
+            # Move to device
+            images = [img.to(self.device) for img in images]
+            targets = [{k: v.to(self.device) for k, v in t.items()} for t in targets]
             
-            # Training phase
-            self.model.train()
-            total_loss = 0
-            valid_batches = 0
+            # Forward pass with mixed precision
+            optimizer.zero_grad()
             
-            progress_bar = tqdm(train_loader, desc=f"Training Epoch {epoch+1}")
+            with torch.cuda.amp.autocast():
+                loss_dict = self.model(images, targets)
+                losses = sum(loss for loss in loss_dict.values())
             
-            for batch_idx, (images, targets) in enumerate(progress_bar):
-                try:
-                    # Clear cache periodically
-                    if batch_idx % 20 == 0:
-                        if torch.cuda.is_available():
-                            torch.cuda.empty_cache()
-                        gc.collect()
-                    
-                    # Filter out empty samples
-                    valid_images = []
-                    valid_targets = []
-                    
-                    for img, target in zip(images, targets):
-                        if len(target['boxes']) > 0:
-                            valid_images.append(img.to(self.device))
-                            valid_targets.append({k: v.to(self.device) for k, v in target.items()})
-                    
-                    if len(valid_images) == 0:
-                        continue
-                    
-                    loss_dict = self.model(valid_images, valid_targets)
-                    losses = sum(loss for loss in loss_dict.values())
-                    
-                    # Normalize loss for gradient accumulation
-                    losses = losses / accumulation_steps
-                    losses.backward()
-                    
-                    # Only optimize after accumulating several batches
-                    if (batch_idx + 1) % accumulation_steps == 0:
-                        torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
-                        optimizer.step()
-                        optimizer.zero_grad()
-                    
-                    total_loss += losses.item() * accumulation_steps
-                    valid_batches += 1
-                    
-                    # Update progress bar
-                    avg_loss = total_loss / max(1, valid_batches)
-                    progress_bar.set_postfix({'Loss': f'{avg_loss:.4f}'})
-                    
-                    # Free up memory
-                    del valid_images, valid_targets, loss_dict, losses
-                    
-                except torch.cuda.OutOfMemoryError:
-                    print(f"\nOOM error in batch {batch_idx}. Clearing memory...")
-                    if torch.cuda.is_available():
-                        torch.cuda.empty_cache()
-                    gc.collect()
-                    continue
-                except Exception as e:
-                    print(f"Error in batch {batch_idx}: {e}")
-                    continue
+            # Backward pass
+            scaler.scale(losses).backward()
             
-            # Calculate epoch metrics
-            avg_train_loss = total_loss / max(1, valid_batches)
+            # Gradient clipping
+            scaler.unscale_(optimizer)
+            torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
             
-            # Validation phase
-            val_loss = 0
-            if val_loader:
-                val_loss = self._validate(val_loader)
-            
-            # Update learning rate
+            scaler.step(optimizer)
+            scaler.update()
             scheduler.step()
             
-            # Save checkpoint
-            if avg_train_loss < best_loss:
-                best_loss = avg_train_loss
-                self.save_checkpoint(f'best_model_epoch_{epoch+1}.pth', epoch, optimizer, scheduler, avg_train_loss)
+            # Update metrics
+            epoch_loss += losses.item()
+            num_batches += 1
             
-            if (epoch + 1) % save_every == 0:
-                self.save_checkpoint(f'checkpoint_epoch_{epoch+1}.pth', epoch, optimizer, scheduler, avg_train_loss)
+            # Update progress bar
+            current_lr = scheduler.get_last_lr()[0]
+            progress_bar.set_postfix({
+                'Loss': f'{losses.item():.4f}',
+                'Avg Loss': f'{epoch_loss/num_batches:.4f}',
+                'LR': f'{current_lr:.6f}'
+            })
             
-            # Log training progress
-            epoch_info = {
-                'epoch': epoch + 1,
-                'train_loss': avg_train_loss,
-                'val_loss': val_loss,
-                'lr': optimizer.param_groups[0]['lr']
-            }
-            training_history.append(epoch_info)
-            
-            print(f"Epoch {epoch+1} completed:")
-            print(f"  Train Loss: {avg_train_loss:.4f}")
-            if val_loader:
-                print(f"  Val Loss: {val_loss:.4f}")
-            print(f"  Learning Rate: {optimizer.param_groups[0]['lr']:.6f}")
+            self.learning_rates.append(current_lr)
         
-        return training_history
-    
-    def _validate(self, val_loader):
-        """Run validation"""
-        self.model.train()  # Keep in training mode for loss calculation
-        total_loss = 0
-        valid_batches = 0
-        
-        with torch.no_grad():
-            for images, targets in tqdm(val_loader, desc="Validating"):
-                try:
-                    valid_images = []
-                    valid_targets = []
-                    
-                    for img, target in zip(images, targets):
-                        if len(target['boxes']) > 0:
-                            valid_images.append(img.to(self.device))
-                            valid_targets.append({k: v.to(self.device) for k, v in target.items()})
-                    
-                    if len(valid_images) == 0:
-                        continue
-                    
-                    loss_dict = self.model(valid_images, valid_targets)
-                    losses = sum(loss for loss in loss_dict.values())
-                    
-                    total_loss += losses.item()
-                    valid_batches += 1
-                    
-                except Exception as e:
-                    continue
-        
-        return total_loss / max(1, valid_batches)
-    
-    def save_checkpoint(self, path, epoch, optimizer, scheduler, loss):
-        """Save training checkpoint"""
-        checkpoint = {
-            'epoch': epoch,
-            'model_state_dict': self.model.state_dict(),
-            'optimizer_state_dict': optimizer.state_dict(),
-            'scheduler_state_dict': scheduler.state_dict(),
-            'loss': loss,
-            'device': str(self.device)
-        }
-        torch.save(checkpoint, path)
-        print(f"✅ Checkpoint saved: {path}")
-    
-    def save_model(self, path):
-        """Save model weights only"""
-        torch.save(self.model.state_dict(), path)
-    
-    def load_model(self, path):
-        if os.path.exists(path):
-            self.model.load_state_dict(torch.load(path, map_location=self.device))
-        else:
-            print(f"Model file {path} not found!")
+        avg_loss = epoch_loss / num_batches
+        self.train_losses.append(avg_loss)
+        return avg_loss
 
-def get_enhanced_data_loaders(train_config, val_config=None, batch_size=4, num_workers=2):
-    """Get enhanced data loaders with better memory management"""
-    
-    # Training dataset
-    train_dataset = EnhancedCOCOAnimalDataset(
-        root_dir=train_config['root_dir'],
-        annotation_file=train_config['annotation_file'],
-        max_images_per_category=train_config.get('max_images_per_category'),
-        min_area=train_config.get('min_area', 100),
-        augment=True
-    )
-    
-    datasets = [train_dataset]
-    print(f"Training dataset loaded with {len(train_dataset)} samples")
-    
-    # Validation dataset (optional)
-    val_loader = None
-    if val_config:
-        val_dataset = EnhancedCOCOAnimalDataset(
-            root_dir=val_config['root_dir'],
-            annotation_file=val_config['annotation_file'],
-            max_images_per_category=val_config.get('max_images_per_category'),
-            min_area=val_config.get('min_area', 100),
-            augment=False  # No augmentation for validation
-        )
-        print(f"Validation dataset loaded with {len(val_dataset)} samples")
+    def validate_epoch(self, dataloader):
+            """Validate model performance"""
+            self.model.eval()
+            val_loss = 0
+            num_batches = 0
+            
+            with torch.no_grad():
+                for images, targets in tqdm(dataloader, desc='Validation'):
+                    images = [img.to(self.device) for img in images]
+                    targets = [{k: v.to(self.device) for k, v in t.items()} for t in targets]
+                    
+                    # Forward pass - model returns loss dict during training
+                    self.model.train()  # Temporarily set to train mode to get losses
+                    loss_dict = self.model(images, targets)
+                    self.model.eval()  # Set back to eval mode
+                    
+                    # Calculate total loss
+                    losses = sum(loss for loss in loss_dict.values())
+                    val_loss += losses.item()
+                    num_batches += 1
+            
+            avg_val_loss = val_loss / num_batches if num_batches > 0 else 0
+            self.val_losses.append(avg_val_loss)
+            return avg_val_loss
+
+    def train_model(self, train_dataset, val_dataset, epochs=50, batch_size=8, 
+                    learning_rate=0.001, save_dir='checkpoints'):
+            """Complete training pipeline with RunPod optimization"""
+            os.makedirs(save_dir, exist_ok=True)
+            
+            # Create data loaders with RunPod optimized settings
+            def collate_fn(batch):
+                return tuple(zip(*batch))
+            
+            train_loader = DataLoader(
+                train_dataset, 
+                batch_size=batch_size, 
+                shuffle=True, 
+                num_workers=2,  # Reduced for RunPod
+                collate_fn=collate_fn,
+                pin_memory=True
+            )
+            
+            val_loader = DataLoader(
+                val_dataset, 
+                batch_size=batch_size, 
+                shuffle=False, 
+                num_workers=2,  # Reduced for RunPod
+                collate_fn=collate_fn,
+                pin_memory=True
+            )
+            
+            # Setup training components
+            optimizer = self.create_optimizer(learning_rate)
+            total_steps = epochs * len(train_loader)
+            scheduler = self.create_scheduler(optimizer, total_steps)
+            scaler = torch.cuda.amp.GradScaler()
+            
+            # Initialize best validation loss for checkpointing
+            best_val_loss = float('inf')
+            best_model_path = None
+            
+            print(f"Starting training for {epochs} epochs...")
+            print(f"Device: {self.device}")
+            print(f"Batch size: {batch_size}")
+            print(f"Learning rate: {learning_rate}")
+            
+            for epoch in range(epochs):
+                print(f"\nEpoch {epoch+1}/{epochs}")
+                print("-" * 50)
+                
+                # Training phase
+                avg_train_loss = self.train_epoch(train_loader, optimizer, scheduler, scaler, epoch+1)
+                
+                # Validation phase
+                val_loss = self.validate_epoch(val_loader)
+                
+                print(f"Train Loss: {avg_train_loss:.4f}")
+                print(f"Val Loss: {val_loss:.4f}")
+                print(f"Learning Rate: {scheduler.get_last_lr()[0]:.6f}")
+                
+                # CHECKPOINTING - Save best model
+                if val_loss < best_val_loss:
+                    best_val_loss = val_loss
+                    best_checkpoint = {
+                        'epoch': epoch,
+                        'model_state_dict': self.model.state_dict(),
+                        'optimizer_state_dict': optimizer.state_dict(),
+                        'scheduler_state_dict': scheduler.state_dict(),
+                        'scaler_state_dict': scaler.state_dict(),
+                        'train_losses': self.train_losses,
+                        'val_losses': self.val_losses,
+                        'best_val_loss': best_val_loss,
+                        'learning_rate': learning_rate,
+                        'num_classes': self.num_classes,
+                        'class_names': self.class_names
+                    }
+                    best_model_path = os.path.join(save_dir, 'best_model.pth')
+                    torch.save(best_checkpoint, best_model_path)
+                    print(f"✓ New best model saved! Val loss: {val_loss:.4f}")
+                
+                # Save checkpoint every 10 epochs as backup
+                if (epoch + 1) % 10 == 0:
+                    backup_checkpoint = {
+                        'epoch': epoch,
+                        'model_state_dict': self.model.state_dict(),
+                        'optimizer_state_dict': optimizer.state_dict(),
+                        'scheduler_state_dict': scheduler.state_dict(),
+                        'scaler_state_dict': scaler.state_dict(),
+                        'train_losses': self.train_losses,
+                        'val_losses': self.val_losses,
+                        'best_val_loss': best_val_loss,
+                        'num_classes': self.num_classes,
+                        'class_names': self.class_names
+                    }
+                    backup_path = os.path.join(save_dir, f'checkpoint_epoch_{epoch+1}.pth')
+                    torch.save(backup_checkpoint, backup_path)
+                    print(f"✓ Backup checkpoint saved: {backup_path}")
+            
+            print(f"\nTraining completed!")
+            print(f"Best validation loss: {best_val_loss:.4f}")
+            print(f"Best model saved at: {best_model_path}")
+            
+            return best_model_path
+
+    def save_checkpoint(self, path, epoch, optimizer, scheduler, scaler=None):
+            """Save training checkpoint with all necessary components"""
+            checkpoint = {
+                'epoch': epoch,
+                'model_state_dict': self.model.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+                'scheduler_state_dict': scheduler.state_dict(),
+                'train_losses': self.train_losses,
+                'val_losses': self.val_losses,
+                'learning_rates': self.learning_rates,
+                'num_classes': self.num_classes,
+                'class_names': self.class_names
+            }
+            
+            if scaler is not None:
+                checkpoint['scaler_state_dict'] = scaler.state_dict()
+            
+            torch.save(checkpoint, path)
+            print(f"Checkpoint saved to {path}")
         
-        def collate_fn(batch):
-            return tuple(zip(*batch))
+    def load_model(self, path):
+            """Load trained model with proper error handling"""
+            if not os.path.exists(path):
+                print(f"Model file {path} not found")
+                return False
+            
+            try:
+                checkpoint = torch.load(path, map_location=self.device)
+                
+                # Load model state
+                if 'model_state_dict' in checkpoint:
+                    self.model.load_state_dict(checkpoint['model_state_dict'])
+                else:
+                    print("No model_state_dict found in checkpoint")
+                    return False
+                
+                # Load training history if available
+                if 'train_losses' in checkpoint:
+                    self.train_losses = checkpoint['train_losses']
+                if 'val_losses' in checkpoint:
+                    self.val_losses = checkpoint['val_losses']
+                if 'learning_rates' in checkpoint:
+                    self.learning_rates = checkpoint['learning_rates']
+                
+                print(f"Model loaded from {path}")
+                if 'epoch' in checkpoint:
+                    print(f"Loaded from epoch: {checkpoint['epoch']}")
+                if 'best_val_loss' in checkpoint:
+                    print(f"Best validation loss: {checkpoint['best_val_loss']:.4f}")
+                
+                return True
+            except Exception as e:
+                print(f"Error loading model: {e}")
+                return False
+
+    def resume_training(self, checkpoint_path, train_dataset, val_dataset, 
+                        total_epochs=50, batch_size=8):
+            """Resume training from a checkpoint"""
+            if not self.load_checkpoint(checkpoint_path):
+                print("Failed to load checkpoint for resuming training")
+                return None
+            
+            # Load checkpoint details
+            checkpoint = torch.load(checkpoint_path, map_location=self.device)
+            start_epoch = checkpoint.get('epoch', 0) + 1
+            
+            print(f"Resuming training from epoch {start_epoch}")
+            
+            # Continue training for remaining epochs
+            remaining_epochs = total_epochs - start_epoch
+            if remaining_epochs <= 0:
+                print("Training already completed")
+                return None
+            
+            return self.train_model(
+                train_dataset, val_dataset, 
+                epochs=remaining_epochs, 
+                batch_size=batch_size,
+                save_dir='checkpoints'
+            )
+
+    def load_checkpoint(self, checkpoint_path):
+            """Load checkpoint for resuming training"""
+            if not os.path.exists(checkpoint_path):
+                return False
+            
+            try:
+                checkpoint = torch.load(checkpoint_path, map_location=self.device)
+                
+                # Load model
+                self.model.load_state_dict(checkpoint['model_state_dict'])
+                
+                # Load training history
+                self.train_losses = checkpoint.get('train_losses', [])
+                self.val_losses = checkpoint.get('val_losses', [])
+                self.learning_rates = checkpoint.get('learning_rates', [])
+                
+                return True
+            except Exception as e:
+                print(f"Error loading checkpoint: {e}")
+                return False
+
+    def plot_training_progress(self, save_dir):
+            """Plot training progress"""
+            fig, axes = plt.subplots(2, 2, figsize=(15, 10))
+            
+            # Loss curves
+            if self.train_losses and self.val_losses:
+                axes[0, 0].plot(self.train_losses, label='Train Loss', color='blue')
+                axes[0, 0].plot(self.val_losses, label='Val Loss', color='red')
+                axes[0, 0].set_title('Training and Validation Loss')
+                axes[0, 0].set_xlabel('Epoch')
+                axes[0, 0].set_ylabel('Loss')
+                axes[0, 0].legend()
+                axes[0, 0].grid(True)
+            
+            # Learning rate
+            if self.learning_rates:
+                axes[0, 1].plot(self.learning_rates, color='green')
+                axes[0, 1].set_title('Learning Rate Schedule')
+                axes[0, 1].set_xlabel('Step')
+                axes[0, 1].set_ylabel('Learning Rate')
+                axes[0, 1].grid(True)
+            
+            # Loss difference
+            if len(self.train_losses) > 1 and len(self.val_losses) > 1:
+                loss_diff = [val - train for train, val in zip(self.train_losses, self.val_losses)]
+                axes[1, 0].plot(loss_diff, color='purple')
+                axes[1, 0].set_title('Validation - Training Loss (Overfitting Indicator)')
+                axes[1, 0].set_xlabel('Epoch')
+                axes[1, 0].set_ylabel('Loss Difference')
+                axes[1, 0].grid(True)
+            
+            # Recent loss trend
+            if len(self.train_losses) > 10:
+                recent_train = self.train_losses[-10:]
+                recent_val = self.val_losses[-10:]
+                axes[1, 1].plot(recent_train, label='Recent Train Loss', color='blue')
+                axes[1, 1].plot(recent_val, label='Recent Val Loss', color='red')
+                axes[1, 1].set_title('Recent Loss Trend (Last 10 Epochs)')
+                axes[1, 1].set_xlabel('Recent Epochs')
+                axes[1, 1].set_ylabel('Loss')
+                axes[1, 1].legend()
+                axes[1, 1].grid(True)
+            
+            plt.tight_layout()
+            plt.savefig(os.path.join(save_dir, 'training_progress.png'), dpi=300, bbox_inches='tight')
+            plt.close()
+
+    def detect_image(self, image_path, confidence_threshold=0.5):
+            """Detect objects in image"""
+            # Load and preprocess image
+            image = Image.open(image_path).convert('RGB')
+            transform = transforms.Compose([
+                transforms.Resize((640, 640)),  # Updated size
+                transforms.ToTensor(),
+                transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+            ])
+            image_tensor = transform(image).unsqueeze(0).to(self.device)
+            
+            # Run inference
+            self.model.eval()
+            with torch.no_grad():
+                predictions = self.model(image_tensor)
+            
+            # Process predictions
+            boxes = predictions[0]['boxes'].cpu().numpy()
+            scores = predictions[0]['scores'].cpu().numpy()
+            labels = predictions[0]['labels'].cpu().numpy()
+            
+            # Filter by confidence
+            mask = scores > confidence_threshold
+            boxes = boxes[mask]
+            scores = scores[mask]
+            labels = labels[mask]
+            
+            return boxes, scores, labels, image
         
-        val_loader = DataLoader(
-            val_dataset,
-            batch_size=batch_size,
-            shuffle=False,
-            collate_fn=collate_fn,
-            num_workers=num_workers,
-            pin_memory=torch.cuda.is_available()
+    def draw_detections(self, image, boxes, scores, labels, save_path=None):
+            """Draw bounding boxes and labels on image"""
+            # Convert PIL to OpenCV format
+            img_cv = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
+            
+            for box, score, label in zip(boxes, scores, labels):
+                if label < len(self.class_names):
+                    class_name = self.class_names[label]
+                    color = self.colors.get(class_name, (255, 255, 255))
+                    
+                    # Draw bounding box
+                    x1, y1, x2, y2 = map(int, box)
+                    cv2.rectangle(img_cv, (x1, y1), (x2, y2), color, 3)
+                    
+                    # Draw label with confidence
+                    label_text = f"{class_name}: {score:.2f}"
+                    
+                    # Get text size for background rectangle
+                    (text_width, text_height), baseline = cv2.getTextSize(
+                        label_text, cv2.FONT_HERSHEY_SIMPLEX, 0.8, 2
+                    )
+        
+                    # Draw background rectangle for text
+                    cv2.rectangle(img_cv, (x1, y1 - text_height - 15), 
+                            (x1 + text_width, y1), color, -1)
+        
+                    # Draw text
+                    cv2.putText(img_cv, label_text, (x1, y1 - 5),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 0), 2)
+
+                    if save_path:
+                        cv2.imwrite(save_path, img_cv)
+                        print(f"Detection result saved to {save_path}")
+        
+                    return img_cv
+
+    def detect_and_display(self, image_path, confidence_threshold=0.5, save_path=None):
+        """Complete detection pipeline with visualization"""
+        print(f"Processing: {image_path}")
+        
+        # Detect objects
+        boxes, scores, labels, original_image = self.detect_image(image_path, confidence_threshold)
+        
+        # Print detections
+        print(f"Found {len(boxes)} detections:")
+        for i, (box, score, label) in enumerate(zip(boxes, scores, labels)):
+            if label < len(self.class_names):
+                class_name = self.class_names[label]
+                print(f"  {i+1}. {class_name}: {score:.3f}")
+        
+        # Draw and save result
+        result_image = self.draw_detections(original_image, boxes, scores, labels, save_path)
+        
+        return result_image, boxes, scores, labels
+
+    def detect_webcam(self, confidence_threshold=0.3):
+        """Real-time detection from webcam"""
+        cap = cv2.VideoCapture(0)
+        
+        print("Starting webcam detection. Press 'q' to quit.")
+        
+        while True:
+            ret, frame = cap.read()
+            if not ret:
+                break
+            
+            # Save frame temporarily
+            temp_path = 'temp_frame.jpg'
+            cv2.imwrite(temp_path, frame)
+            
+            # Detect
+            try:
+                boxes, scores, labels, _ = self.detect_image(temp_path, confidence_threshold)
+                
+                # Draw on original frame
+                for box, score, label in zip(boxes, scores, labels):
+                    if label < len(self.class_names):
+                        class_name = self.class_names[label]
+                        color = self.colors.get(class_name, (255, 255, 255))
+                        
+                        x1, y1, x2, y2 = map(int, box)
+                        cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
+                        
+                        label_text = f"{class_name}: {score:.2f}"
+                        cv2.putText(frame, label_text, (x1, y1 - 10),
+                                cv2.FONT_HERSHEY_SIMPLEX, 0.7, color, 2)
+            except Exception as e:
+                print(f"Detection error: {e}")
+            
+            cv2.imshow('Enhanced Human & Animal Detection', frame)
+            
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+        
+        cap.release()
+        cv2.destroyAllWindows()
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+
+    # RunPod-specific GPU memory monitoring
+    def check_gpu_memory():
+        """Check available GPU memory"""
+        if torch.cuda.is_available():
+            for i in range(torch.cuda.device_count()):
+                props = torch.cuda.get_device_properties(i)
+                print(f"GPU {i}: {props.name}")
+                print(f"  Total memory: {props.total_memory / 1024**3:.2f} GB")
+                print(f"  Available memory: {torch.cuda.memory_reserved(i) / 1024**3:.2f} GB")
+        else:
+            print("No GPU available")
+
+    # RunPod optimized training function
+    def train_complete_model():
+        """Complete training pipeline - RunPod optimized"""
+        print("Setting up Complete Enhanced Human & Animal Detector")
+        
+        # Initialize detector
+        detector = CompleteEnhancedDetector()
+        
+        # Check dataset paths before proceeding
+        train_root = 'coco/images/train2017'
+        train_ann = 'coco/annotations/instances_train2017.json'
+        val_root = 'coco/images/train2017'
+        val_ann = 'coco/annotations/instances_train2017.json'
+        
+        # Verify paths exist
+        missing_paths = []
+        for path in [train_root, train_ann, val_root, val_ann]:
+            if not os.path.exists(path):
+                missing_paths.append(path)
+        
+        if missing_paths:
+            print("ERROR: Missing required files:")
+            for path in missing_paths:
+                print(f"  - {path}")
+            print("\nPlease ensure COCO dataset is properly downloaded and extracted.")
+            print("You can download COCO dataset from: https://cocodataset.org/#download")
+            print("Required files:")
+            print("  - 2017 Train images [118K/18GB]")
+            print("  - 2017 Val images [5K/1GB]")
+            print("  - 2017 Train/Val annotations [241MB]")
+            return None
+        
+        # Setup datasets with error handling
+        try:
+            train_dataset = EnhancedCOCODataset(
+                root_dir=train_root,
+                annotation_file=train_ann,
+                is_training=True
+            )
+            
+            val_dataset = EnhancedCOCODataset(
+                root_dir=val_root,
+                annotation_file=val_ann,
+                is_training=False
+            )
+        except Exception as e:
+            print(f"ERROR loading datasets: {e}")
+            return None
+        
+        print(f"Training dataset: {len(train_dataset)} images")
+        print(f"Validation dataset: {len(val_dataset)} images")
+        
+        # Start training with RunPod-optimized settings
+        best_model_path = detector.train_model(
+            train_dataset=train_dataset,
+            val_dataset=val_dataset,
+            epochs=30,  # Reduced for faster training
+            batch_size=4,  # Reduced for GPU memory
+            learning_rate=0.001
         )
+        
+        print(f"Training completed! Best model saved at: {best_model_path}")
+        return detector
+
+    # Testing functions
+    def test_detection():
+        """Test the trained model"""
+        detector = CompleteEnhancedDetector()
+        
+        # Load trained model
+        if detector.load_model('checkpoints/best_model.pth'):
+            print("Model loaded successfully!")
+            
+            # Test on sample images
+            test_images = ['test_image.jpg', 'sample.jpg', 'demo.png']
+            
+            for img_path in test_images:
+                if os.path.exists(img_path):
+                    print(f"\n{'='*50}")
+                    result_img, boxes, scores, labels = detector.detect_and_display(
+                        img_path, 
+                        confidence_threshold=0.5,
+                        save_path=f"detected_{os.path.basename(img_path)}"
+                    )
+                    
+                    # Show result
+                    cv2.imshow(f'Detections - {img_path}', result_img)
+                    cv2.waitKey(3000)
+                    cv2.destroyAllWindows()
+        else:
+            print("No trained model found. Please train the model first.")
+
+if __name__ == "__main__":
+    print("Complete Enhanced Human & Animal Detector")
+    print("1. Train new model")
+    print("2. Test existing model")
+    print("3. Real-time webcam detection")
     
-    # Training data loader
-    def collate_fn(batch):
-        return tuple(zip(*batch))
+    choice = input("Choose option (1, 2, or 3): ")
     
-    train_loader = DataLoader(
-        train_dataset,
-        batch_size=batch_size,
-        shuffle=True,
-        collate_fn=collate_fn,
-        num_workers=num_workers,
-        pin_memory=torch.cuda.is_available(),
-        persistent_workers=num_workers > 0
-    )
-    
-    return train_loader, val_loader
+    if choice == '1':
+        train_complete_model()
+    elif choice == '2':
+        test_detection()
+    elif choice == '3':
+        detector = CompleteEnhancedDetector()
+        if detector.load_model('checkpoints/best_model.pth'):
+            detector.detect_webcam()
+        else:
+            print("No trained model found. Please train first.")
+    else:
+        print("Invalid choice. Please run again.")
