@@ -13,8 +13,6 @@ import pandas as pd
 from tqdm import tqdm
 import requests
 import gc
-import ssl
-import urllib.request
 
 
 def download_file(url, dest_path):
@@ -116,23 +114,8 @@ class COCOAnimalDataset(Dataset):
 
 class AnimalDetector:
     def __init__(self, num_classes, weights_path=None):
-        # Fix SSL certificate issues on macOS
-        try:
-            # Create an unverified SSL context (only for model download)
-            ssl_context = ssl._create_unverified_context()
-            ssl._create_default_https_context = ssl._create_unverified_context
-        except AttributeError:
-            pass
-        
-        # Initialize model with proper weights parameter
-        try:
-            # Use the new weights parameter instead of deprecated pretrained
-            from torchvision.models.detection import FasterRCNN_MobileNet_V3_Large_320_FPN_Weights
-            weights = FasterRCNN_MobileNet_V3_Large_320_FPN_Weights.COCO_V1
-            self.model = fasterrcnn_mobilenet_v3_large_320_fpn(weights=weights)
-        except ImportError:
-            # Fallback for older torchvision versions
-            self.model = fasterrcnn_mobilenet_v3_large_320_fpn(pretrained=True)
+        # Initialize model
+        self.model = fasterrcnn_mobilenet_v3_large_320_fpn(pretrained=True)
         
         # Modify the box predictor for our number of classes (+1 for background)
         in_features = self.model.roi_heads.box_predictor.cls_score.in_features
@@ -140,11 +123,7 @@ class AnimalDetector:
         
         # Load trained weights if provided
         if weights_path and os.path.exists(weights_path):
-            try:
-                self.model.load_state_dict(torch.load(weights_path, map_location='cpu'))
-                print(f"✅ Loaded custom weights from {weights_path}")
-            except Exception as e:
-                print(f"⚠️ Failed to load custom weights: {e}")
+            self.model.load_state_dict(torch.load(weights_path, map_location='cpu'))
         
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.model.to(self.device)
