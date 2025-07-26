@@ -164,3 +164,10 @@ Full technical report and implementation details can be found here:
 This project is for academic and non-commercial research use only. For commercial licensing or deployments, contact the authors.
 
 ---
+
+## 🏆 Honors & Recognition
+
+This project was proudly awarded **“Best Project”** under the **Environment** theme for the Second Semester *Experiential Learning Component* at RV College of Engineering, Bangalore.
+
+- 📄 [View Certificate](https://drive.google.com/file/d/19rnxeojvhW3wl1XnqUNSn9dHwQ87KWDo/view?usp=sharing)
+
