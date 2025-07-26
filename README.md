@@ -66,9 +66,9 @@ Alerts are automatically pushed to rangers via **Pushbullet** notifications, con
 
 ## 📥 Download the Model
 
-Due to the large size of the trained AI model, it is not included in this repository. Please download the **best performing model** (Epoch 20) from the link below:
+Due to the relatively large size of the trained AI model, it is not included in this repository. Please download the **best performing model** (Epoch 20) from the link below:
 
-📌 **[Download `best_model.pth`](https://drive.google.com/file/d/1nPXvh7tcejJUAvr64irGF3ewKqyX897c/view?usp=sharing)**  
+📌 **[Download `best_model.pth`](https://drive.google.com/file/d/1jVHQoEx7L2ZPFtwcHV8DU7CziB6z2F6e/view?usp=sharing)**  
 📝 Ensure this file is placed in the **same directory** as `integrated_detection_v5.py`.
 
 ---
@@ -152,32 +152,15 @@ Model is optimized for **low power**, **offline deployment**, and **edge inferen
 ## 📚 Documentation
 
 Full technical report and implementation details can be found here:
-- [📄 Access Report PDF](./Access-Template.pdf)
-- [📘 EL Report Format PDF](./EL%20Report%20Format.pdf)
-
----
-
-## 🙌 Team
-
-Developed as part of the Experiential Learning Project at **RV College of Engineering**, Bengaluru.
-
-| Name              | Branch | Role                           |
-|-------------------|--------|--------------------------------|
-| Vivaan Hooda      | ISE    | Video Classifier, Flask Backend |
-| Bivin Bheemaiah   | CSE    | Audio Classifier, Alert System |
-| Ayush Khare       | ECE    | Hardware Integration           |
-| Manyashree S      | ISE    | Dataset Collection & Preprocessing |
+- [📄 Unpublished Paper PDF](https://drive.google.com/file/d/1_s0hC6Il7NhcbeWVox9EWxUbcrciseXP/view?usp=sharing)
+- [📘 EL Report PDF](https://drive.google.com/file/d/1B7D9sXXb16WTmadQxiPt68nnwwCTdMVP/view?usp=sharing)
+- [📀 Video Demonstration](https://drive.google.com/file/d/1ExfGBStDfSps7XRbbWfGsixl_-ZQynjX/view?usp=sharing)
+- [📜 Poster](https://drive.google.com/file/d/1i6KM6y8oWH_YLwYJXIkCGD7_lwVzMAEK/view?usp=sharing)
 
 ---
 
 ## 📌 License
 
 This project is for academic and non-commercial research use only. For commercial licensing or deployments, contact the authors.
-
----
-
-## 🔗 Acknowledgments
-
-Special thanks to our guide **Dr. C. Sunanda** and RVCE faculty members for their support and evaluation during the development of this project.
 
 ---
